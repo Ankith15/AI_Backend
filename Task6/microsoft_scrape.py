@@ -19,12 +19,12 @@ async def scrape_blog_details():
             print(f"\n🌍 Scraping Page {page_number}: {url}")
             try:
                 await page.goto(url)
-                await page.wait_for_selector('article.card.material-card h3.h4 a', timeout=10000)
+                await page.wait_for_selector("a.post-card-inline__title-link[href^='/news/']", timeout=10000)
             except:
                 print(f"❌ Skipping page {page_number}, failed to load.")
                 continue
 
-            blog_links = await page.query_selector_all('article.card.material-card h3.h4 a')
+            blog_links = await page.query_selector_all("a.post-card-inline__title-link[href^='/news/']")
             print(f"📄 Found {len(blog_links)} blog links on this page")
 
             for link in blog_links:

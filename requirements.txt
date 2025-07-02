@@ -8,3 +8,6 @@ python-dotenv>=1.0.1
 google-generativeai>=0.5.0
 playwright==1.44.0
 asyncio
+feedparser
+bs4
+cloudscrapper

@@ -214,3 +214,6 @@ train.csv
 test.csv
 Task1\Rag\ds_pdf_data.pdf
 ds_pdf_data.pdf
+decrypt_latest_news.json
+bankless_latest_news.json
+theblock_latest_news.json
