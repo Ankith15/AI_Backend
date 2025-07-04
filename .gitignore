@@ -218,3 +218,6 @@ decrypt_latest_news.json
 bankless_latest_news.json
 theblock_latest_news.json
 coindesk_latest_news.json
+top10_articles.json
+top10_summaries.json
+summarized_articles.json

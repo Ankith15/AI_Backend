@@ -56,5 +56,3 @@ def scrape_theblock():
 
     print("✅ Saved top 5 articles to 'theblock_latest_news.json'")
 
-# Run the function
-scrape_theblock()

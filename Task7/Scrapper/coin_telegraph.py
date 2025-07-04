@@ -75,10 +75,3 @@ def scrape_cointelegraph_news():
 
     return articles
 
-if __name__ == "__main__":
-    results = scrape_cointelegraph_news()
-
-    with open("cointelegraph_latest_news.json", "w", encoding="utf-8") as f:
-        json.dump(results, f, ensure_ascii=False, indent=4)
-
-    print("\n✅ Saved to 'cointelegraph_latest_news.json'")

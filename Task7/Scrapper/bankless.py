@@ -78,8 +78,3 @@ def scrape_bankless_news():
     return articles
 
 
-if __name__ == "__main__":
-    results = scrape_bankless_news()
-    with open("bankless_latest_news.json", "w", encoding="utf-8") as f:
-        json.dump(results, f, ensure_ascii=False, indent=4)
-    print("✅ Saved top 5 Bankless articles to 'bankless_latest_news.json'")

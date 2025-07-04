@@ -48,9 +48,3 @@ def scrape_decrypt_rss_full_content():
 
     return articles
 
-if __name__ == "__main__":
-    results = scrape_decrypt_rss_full_content()
-    with open("decrypt_latest_news.json", "w", encoding="utf-8") as f:
-        json.dump(results, f, ensure_ascii=False, indent=4)
-
-    print("\n✅ Saved to 'decrypt_latest_news.json'")

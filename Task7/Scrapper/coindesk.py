@@ -44,5 +44,3 @@ def scrape_coindesk_articles():
 
     print("✅ Saved to 'coindesk_latest_news.json'")
 
-if __name__ == "__main__":
-    scrape_coindesk_articles()
