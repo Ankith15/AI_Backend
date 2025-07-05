@@ -13,34 +13,43 @@ from Scrapper.decrypt import scrape_decrypt_rss_full_content as scrape_decrypt
 from Scrapper.bankless import scrape_bankless_news as scrape_bankless
 from Scrapper.theblock import scrape_theblock as scrape_theblock
 
-# Load GROQ API Key
+# Step 1: Load API Key
 load_dotenv()
 groq_api_key = os.getenv("GROQ_API")
-
 if not groq_api_key:
-    raise ValueError("❌ GROQ_API not found in .env file.")
+    raise ValueError("❌ GROQ_API key not found in .env file.")
 
-# Initialize LLM
+# Step 2: Initialize LLM
 llm = ChatGroq(
     api_key=groq_api_key,
-    model="mixtral-8x7b-32768",  # You can also use "llama3-70b-8192"
+    model="llama3-70b-8192",
+    temperature=0.2
 )
 
+
+# Step 3: Prompt for concise 3–4 sentence summary
 prompt = ChatPromptTemplate.from_template("""
-Summarize the following crypto news article in a concise paragraph:
-"{article}"
+You are an expert crypto journalist. Summarize the following article in **3-4 sentences**, highlighting the main news, facts, and entities. Avoid filler phrases and do not copy large blocks of text.
+
+Article:
+\"\"\"{article}\"\"\"
+
+Summary (3–4 sentences only):
 """)
 
 chain = prompt | llm | StrOutputParser()
 
 def main():
     print("🚀 Scraping and deduplicating articles...")
+    
+    # Step 4: Scrape all 5 sources
     coindesk_articles = scrape_coindesk() or []
     cointelegraph_articles = scrape_cointelegraph() or []
     decrypt_articles = scrape_decrypt() or []
     bankless_articles = scrape_bankless() or []
     theblock_articles = scrape_theblock() or []
 
+    # Step 5: Merge
     all_articles = (
         coindesk_articles +
         cointelegraph_articles +
@@ -48,23 +57,27 @@ def main():
         bankless_articles +
         theblock_articles
     )
+    print(f"📦 Total articles scraped: {len(all_articles)}")
 
+    # Step 6: Deduplicate + get top 10
     top_articles = deduplicate_and_select_top_articles(all_articles)
-    summarized_articles = []
 
-    print("🧠 Generating summaries...")
+    # Step 7: Summarize
+    summarized_articles = []
+    print("🧠 Generating summaries...\n")
 
     for article in top_articles:
         try:
-            content = article["content"]
-            summary = chain.invoke({"article": content})
+            summary = chain.invoke({"article": article["content"]})
         except Exception as e:
             summary = f"Summary failed: {e}"
+
         article["summary"] = summary
         summarized_articles.append(article)
-        print(f"✅ Summarized: {article['title']}")
 
-    # Save to JSON
+        print(f"✅ Summarized: {article['title']}\n")
+
+    # Step 8: Save summarized JSON
     with open("summarized_articles.json", "w", encoding="utf-8") as f:
         json.dump(summarized_articles, f, ensure_ascii=False, indent=4)
 
