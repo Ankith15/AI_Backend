@@ -149,6 +149,9 @@ uvicorn app.main:app --reload
 ![alt text](image-1.png)
 
 ---
+## Video
+
+https://github.com/user-attachments/assets/6005e335-bfae-44e7-89c6-31bb1374da1c
 
 ## 🙌 Done By
 
