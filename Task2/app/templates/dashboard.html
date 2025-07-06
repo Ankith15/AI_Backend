@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+    <h2>Welcome, {{ user }}</h2>
+
+    {% if not org_exists %}
+        <p>🚧 No organization found. <a href="/org/create-form">Create one</a></p>
+    {% elif not dept_exists %}
+        <p>🏢 No department found. <a href="/dept/create-form">Create one</a></p>
+    {% else %}
+        <ul>
+            <li><a href="/assign-role">Assign Roles to Users</a></li>
+            <li><a href="/resource/upload">Upload/View Resources</a></li>
+
+            <li><a href="#">Generate Guest Shareable Link (Coming Soon)</a></li>
+        </ul>
+    {% endif %}
+</body>
+</html>

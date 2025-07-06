@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assign Role</title>
+</head>
+<body>
+    <h2>Assign Role to User</h2>
+    <form method="post">
+        <label>Select User:</label><br>
+        <select name="user_id">
+            {% for user in users %}
+                <option value="{{ user.id }}">{{ user.username }} ({{ user.email }})</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label>Select Role:</label><br>
+        <select name="role">
+            <option value="Admin">Admin</option>
+            <option value="Manager">Manager</option>
+            <option value="Contributor">Contributor</option>
+            <option value="Viewer">Viewer</option>
+        </select><br><br>
+
+        <input type="submit" value="Assign Role">
+    </form>
+</body>
+</html>

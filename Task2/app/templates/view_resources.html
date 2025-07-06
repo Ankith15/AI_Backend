@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><title>Your Resources</title></head>
+<body>
+    <h2>Your Uploaded Resources ({{ user }})</h2>
+    {% for r in resources %}
+        <div style="border: 1px solid #ccc; margin: 10px; padding: 10px;">
+            <h3>{{ r.title }}</h3>
+            <p>{{ r.content }}</p>
+            <p>
+                <a href="/guest/resource/{{ r.id }}" target="_blank">
+                    🔗 Shareable Link
+                </a>
+            </p>
+        </div>
+    {% else %}
+        <p>No resources found.</p>
+    {% endfor %}
+</body>
+</html>
