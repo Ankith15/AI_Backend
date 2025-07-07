@@ -21,7 +21,7 @@ def send_event(i):
         print(f"❗Error: {e}")
 
 if __name__ == "__main__":
-    num_requests = 10000
+    num_requests = 5000
     max_workers = 200  # Number of threads
 
     start = time.time()
