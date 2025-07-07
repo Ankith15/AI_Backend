@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS prices (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    timestamp DATETIME(3) NOT NULL,
+    symbol VARCHAR(20) NOT NULL,
+    price DECIMAL(18, 8) NOT NULL
+);
