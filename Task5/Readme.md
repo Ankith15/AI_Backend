@@ -112,7 +112,13 @@ task5_binance_price_capture/
 ```
 
 ---
+## Video
 
+
+https://github.com/user-attachments/assets/f3bd6d3d-0688-4119-8a03-6d61a635d9f2
+
+
+---
 ## Contributing
 
 You are welcome to fork this repository and enhance features like:
