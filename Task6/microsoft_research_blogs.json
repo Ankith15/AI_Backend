@@ -1,0 +1,1869 @@
+[
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/padchest-gr-a-bilingual-grounded-radiology-reporting-benchmark-for-chest-x-rays/",
+        "title": "PadChest-GR: A bilingual grounded radiology reporting benchmark for chest X-rays",
+        "published_date": "June 26, 2025",
+        "authors": [
+            {
+                "name": "Daniel Coelho de Castro",
+                "url": "https://www.microsoft.com/en-us/research/people/dacoelh/",
+                "title": "Senior Researcher"
+            },
+            {
+                "name": "Javier Alvarez-Valle",
+                "url": "https://www.microsoft.com/en-us/research/people/jaalvare/",
+                "title": "Senior Director of Biomedical Imaging"
+            }
+        ],
+        "section_content": {
+            "A new frontier in radiology report generation": "It is estimated that over half of people visiting hospitals have radiology scans that must be interpreted by a clinical professional. Traditional radiology reports often condense multiple findings into unstructured narratives. In contrast, grounded radiology reporting demands that each finding be described and localized individually.",
+            "Accelerating PadChest-GR dataset annotation with AI": "Our approach integrates advanced large language models with comprehensive manual annotation:",
+            "Impact and future directions": "PadChest-GR not only sets a new benchmark for grounded radiology reporting, but also serves as the foundation for our MAIRA-2 model, which already showcases the potential of highly interpretable AI in clinical settings. While we developed PadChest-GR to help train and validate our own models, we believe the research community will greatly benefit from this dataset for many years to come. We look forward to seeing the broader research community build on this—improving grounded reporting AI models and using PadChest-GR as a standard for evaluation. We believe that by fostering open collaboration and sharing our resources, we can accelerate progress in medical imaging AI and ultimately improve patient care together with the community.",
+            "Acknowledgement": ""
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/learning-from-other-domains-to-advance-ai-evaluation-and-testing/",
+        "title": "Learning from other domains to advance AI evaluation and testing",
+        "published_date": "June 23, 2025",
+        "authors": [
+            {
+                "name": "Amanda Craig Deckard",
+                "url": "https://www.microsoft.com/en-us/research/people/amcraig/",
+                "title": "Senior Director, Office of Responsible AI"
+            },
+            {
+                "name": "Chad Atalla",
+                "url": "https://www.microsoft.com/en-us/research/people/chatalla/",
+                "title": "Senior Applied Scientist"
+            }
+        ],
+        "section_content": {
+            "Lessons from eight case studies": "Our research on risk evaluation, testing, and assurance models in other domains began in December 2024, when Microsoft’s Office of Responsible AI\n(opens in new tab)\n gathered independent experts from the fields of civil aviation, cybersecurity, financial services, genome editing, medical devices, nanoscience, nuclear energy, and pharmaceuticals. In bringing this group together, we drew on our own learnings and feedback received on our e-book, Global Governance: Goals and Lessons for AI\n(opens in new tab)\n, in which we studied the higher-level goals and institutional approaches that had been leveraged for cross-border governance in the past.",
+            "Applying risk evaluation and governance lessons to AI": "While no analogy perfectly fits the AI context, the genome editing and nanoscience cases offer interesting insights for general-purpose technologies like AI, where risks vary widely depending on how the technology is applied.",
+            "Toward stronger foundations for AI testing": "Establishing robust foundations for AI evaluation and testing requires effort to improve rigor, standardization, and interpretability—and to ensure that methods keep pace with rapid technological progress and evolving scientific understanding.",
+            "Acknowledgements": "We would like to thank the following external experts who have contributed to our research program on lessons for AI testing and evaluation: Mateo Aboy, Paul Alp, Gerónimo Poletto Antonacci, Stewart Baker, Daniel Benamouzig, Pablo Cantero, Daniel Carpenter, Alta Charo, Jennifer Dionne, Andy Greenfield, Kathryn Judge, Ciaran Martin, and Timo Minssen.",
+            "Case studies": "Civil aviation: Testing in Aircraft Design and Manufacturing, by Paul Alp"
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/breaking-bonds-breaking-ground-advancing-the-accuracy-of-computational-chemistry-with-deep-learning/",
+        "title": "Breaking bonds, breaking ground: Advancing the accuracy of computational chemistry with deep learning",
+        "published_date": "June 18, 2025",
+        "authors": [
+            {
+                "name": "Rianne van den Berg",
+                "url": "https://www.microsoft.com/en-us/research/people/rvandenberg/",
+                "title": "Principal Research Manager"
+            },
+            {
+                "name": "Jan Hermann",
+                "url": "https://www.microsoft.com/en-us/research/people/janhermann/",
+                "title": "Principal Research Manager"
+            },
+            {
+                "name": "Christopher Bishop",
+                "url": "https://www.microsoft.com/en-us/research/people/cmbishop/",
+                "title": "Technical Fellow and Director, Microsoft Research AI for Science"
+            },
+            {
+                "name": "Paola Gori Giorgi",
+                "url": "https://www.microsoft.com/en-us/research/people/pgorigiorgi/",
+                "title": "Senior Principal Research Manager"
+            }
+        ],
+        "section_content": {
+            "What is DFT?": "Molecules and materials are made of atoms, which are held together by their electrons. These electrons act as a glue, determining the stability and properties of the chemical structure. Accurately computing the strength and properties of the electron glue is essential for predicting whether a chemical reaction will proceed, whether a candidate drug molecule will bind to its target protein, whether a material is suitable for carbon capture, or if a flow battery can be optimized for renewable energy storage. Unfortunately, a brute-force approach amounts to solving the many-electron Schrödinger equation, which requires computation that scales exponentially with the number of electrons. Considering that an atom has dozens of electrons, and that molecules and materials have large numbers of atoms, we could easily end up waiting the age of the universe to complete our computation unless we restrict our attention to small systems with only a few atoms.",
+            "What is the grand challenge in DFT?": "But there is a catch: the exact reformulation has a small but crucial term—the exchange-correlation (XC) functional—which Kohn proved is universal (i.e., the same for all molecules and materials), but for which no explicit expression is known. For 60 years, people have designed practical approximations for the XC functional. The magazine Science dubbed the gold rush to design better XC models the “pursuit of the Divine Functional\n(opens in new tab)\n”. With time, these approximations have grown into a zoo of hundreds of different XC functionals from which users must choose, often using experimental data as a guide. Owing to the uniquely favorable computational cost of DFT, existing functionals have enabled scientists to gain extremely useful insight into a huge variety of chemical problems. However, the limited accuracy and scope of current XC functionals mean that DFT is still mostly used to interpret experimental results rather than predict them.",
+            "Why is it important to increase the accuracy of DFT?": "We can contrast the present state of computational chemistry with the state of aircraft engineering and design. Thanks to predictive simulations, aeronautical engineers no longer need to build and test thousands of prototypes to identify one viable design. However, this is exactly what we currently must do in molecular and materials sciences. We send thousands of potential candidates to the lab, because the accuracy of the computational methods is not sufficient to predict the experiments. To make a significant shift in the balance from laboratory to in silico experiments, we need to remove the fundamental bottleneck of the insufficient accuracy of present XC functionals. This amounts to bringing the error of DFT calculations with respect to experiments within chemical accuracy, which is around 1 kcal/mol for most chemical processes. Present approximations typically have errors that are 3 to 30 times larger.",
+            "How can AI make a difference?": "AI can transform how we model molecules and materials with DFT by learning the XC functional directly from highly accurate data. The goal is to learn how the XC functional captures the complex relationship between its input, the electron density, and its output, the XC energy. You can think of the density like a glue, with regions of space where there is a lot of it and other regions with less of it. Traditionally, researchers have built XC functional approximations using the concept of the so-called Jacob’s ladder: a hierarchy of increasingly complex, hand-designed descriptors of the electron density. Including density descriptors from higher rungs of this ladder aims to improve accuracy, but it comes at the price of increased computational cost. Even the few attempts that use machine learning have stayed within this traditional paradigm, thereby taking an approach that is akin to what people were doing in computer vision and speech recognition before the deep-learning era. Progress toward better accuracy has stagnated for at least two decades with this approach.",
+            "What have we done in this milestone?": "The first step was generating data—a lot of it. This posed a major challenge, since the data must come from accurate solutions of the many-electron Schrödinger equation, which is precisely the prohibitively expensive problem that DFT is designed to replace. Fortunately, decades of progress in the scientific community have led to smarter, more efficient variants of brute-force methods, making it possible to compute reference data for small molecules at experimental accuracy. While these high-accuracy methods, also referred to as wavefunction methods, are far too costly for routine use in applications, we made a deliberate investment in them for this project. The reason? The upfront cost of generating high-quality training data is offset by the long-term benefit of enabling vast numbers of industrially relevant applications with cost effective DFT using the trained XC functional. Crucially, we rely on the ability of DFT—and our learned XC functional—to generalize from high-accuracy data for small systems to larger, more complex molecules.",
+            "Advancing computational chemistry together": "We are excited to work closely with the global computational chemistry community to accelerate progress for all and look forward to openly releasing our first XC functional in the near future.",
+            "Acknowledgement": "This work is the product of a highly collaborative and interdisciplinary effort led by Microsoft Research AI for Science, in partnership with colleagues from Microsoft Research Accelerator, Microsoft Quantum and the University of New England. The full author list includes Giulia Luise, Chin-Wei Huang, Thijs Vogels, Derk P. Kooi, Sebastian Ehlert, Stephanie Lanius, Klaas J. H. Giesbertz, Amir Karton, Deniz Gunceler, Megan Stanley, Wessel P. Bruinsma, Victor Garcia Satorras, Marwin Segler, Kenji Takeda, Lin Huang, Xinran Wei, José Garrido Torres, Albert Katbashev, Rodrigo Chavez Zavaleta, Bálint Máté, Sékou-Oumar Kaba, Roberto Sordillo, Yingrong Chen, David B. Williams-Young, Christopher M. Bishop, Jan Hermann, Rianne van den Berg and Paola Gori Giorgi."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/new-methods-boost-reasoning-in-small-and-large-language-models/",
+        "title": "New methods boost reasoning in small and large language models",
+        "published_date": "June 17, 2025",
+        "authors": [
+            {
+                "name": "Li Lyna Zhang",
+                "url": "https://www.microsoft.com/en-us/research/people/lzhani/",
+                "title": "Principal Researcher"
+            },
+            {
+                "name": "Xian Zhang",
+                "url": "https://www.microsoft.com/en-us/research/people/zhxian/",
+                "title": "Senior Researcher"
+            },
+            {
+                "name": "Xueting Han",
+                "url": "https://www.microsoft.com/en-us/research/people/chrihan/",
+                "title": "PRINCIPAL RESEARCHER"
+            },
+            {
+                "name": "Dongdong Zhang",
+                "url": "https://www.microsoft.com/en-us/research/people/dozhang/",
+                "title": "Principal Research Manager"
+            }
+        ],
+        "section_content": {
+            "Smarter reasoning in smaller models": "While language models trained on broad world knowledge hold great potential, they lack the ability to learn continuously and refine their understanding. This limitation becomes especially pronounced in smaller models, where limited capacity makes strong reasoning even harder.",
+            "Building reliable mathematical reasoning": "Mathematics poses a unique challenge for language models, which often struggle to meet its precision and rigor using natural language. To address this, we’re creating formal and symbolic methods to enable language models to adopt structured mathematical tools. The goal is to convert language model outputs into code based on the fundamental rules of arithmetic, like 1 + 1 = 2, allowing us to systematically verify accuracy.",
+            "Boosting generalization across domains": "A key indicator of advanced AI is its ability to generalize—the ability to transfer reasoning skills across different domains. We found that training language models on math data significantly improved performance in coding, science, and other areas, revealing unexpected cross-domain benefits.",
+            "Looking ahead: Next steps in AI reasoning": "From building reliable math solvers to unifying reasoning approaches, researchers are redefining how language models approach complex tasks. Their work sets the stage for more capable and versatile AI systems—applicable to education, science, healthcare, and beyond. Despite these advances, hallucinations and imprecise logic continue to pose risks in critical fields like medicine and scientific research, where accuracy is essential."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/rewriting-symcrypt-in-rust-to-modernize-microsofts-cryptographic-library/",
+        "title": "Rewriting SymCrypt in Rust to modernize Microsoft’s cryptographic library",
+        "published_date": "June 10, 2025",
+        "authors": [
+            {
+                "name": "Jonathan Protzenko",
+                "url": "https://www.microsoft.com/en-us/research/people/protz/",
+                "title": "Principal Researcher"
+            },
+            {
+                "name": "Samuel Lee",
+                "url": "https://www.microsoft.com/en-us/research/people/saml/",
+                "title": "Senior Software Engineer"
+            },
+            {
+                "name": "Samreen Khadeer",
+                "url": "https://www.microsoft.com/en-us/research/people/skhadeer/",
+                "title": "Sr. Security Technical PM"
+            },
+            {
+                "name": "Son Ho",
+                "url": "https://www.microsoft.com/en-us/research/people/t-sonho/",
+                "title": "Researcher"
+            },
+            {
+                "name": "Oleksii Oleksenko",
+                "url": "https://www.microsoft.com/en-us/research/people/ololeksenko/",
+                "title": "Senior Researcher"
+            },
+            {
+                "name": "Michael Naehrig",
+                "url": "https://www.microsoft.com/en-us/research/people/mnaehrig/",
+                "title": "Principal Researcher"
+            },
+            {
+                "name": "Cédric Fournet",
+                "url": "https://www.microsoft.com/en-us/research/people/fournet/",
+                "title": "Senior Principal Research Manager"
+            }
+        ],
+        "section_content": {
+            "Proving Rust program properties with Aeneas": "Program verification is the process of proving that a piece of code will always satisfy a given property, no matter the input. Rust’s type system profoundly improves the prospects for program verification by providing strong ownership guarantees, by construction, using a discipline known as “aliasing xor mutability”.",
+            "Compiling Rust to C supports backward compatibility": "We recognize that switching to Rust isn’t feasible for all use cases, so we’ll continue to support, extend, and certify C-based APIs as long as users need them. Users won’t see any changes, as Rust runs underneath the existing C APIs.",
+            "Timing analysis with Revizor": "Even software that has been verified for functional correctness can remain vulnerable to low-level security threats, such as side channels caused by timing leaks or speculative execution. These threats operate at the hardware level and can leak private information, such as memory load addresses, branch targets, or division operands, even when the source code is provably correct.",
+            "Verified Rust implementations begin with ML-KEM": "This long-term effort is in alignment with the Microsoft Secure Future Initiative and brings together experts across Microsoft, building on decades of Microsoft Research investment in program verification and security tooling.",
+            "Looking forward": "This is a pivotal moment for high-assurance software. Microsoft’s investment in Rust and formal verification presents a rare opportunity to advance one of our key libraries. We’re excited to scale this work and ultimately deliver an industrial-grade, Rust-based, FIPS-certified cryptographic library."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/benchmarkqed-automated-benchmarking-of-rag-systems/",
+        "title": "BenchmarkQED: Automated benchmarking of RAG systems",
+        "published_date": "June 5, 2025",
+        "authors": [
+            {
+                "name": "Darren Edge",
+                "url": "https://www.microsoft.com/en-us/research/people/daedge/",
+                "title": "Senior Director"
+            },
+            {
+                "name": "Ha Trinh",
+                "url": "https://www.microsoft.com/en-us/research/people/trinhha/",
+                "title": "Senior Data Scientist"
+            },
+            {
+                "name": "Andres Morales Esquivel",
+                "url": "https://www.microsoft.com/en-us/research/people/andresmor/",
+                "title": "Senior Research Software Engineer"
+            },
+            {
+                "name": "Jonathan Larson",
+                "url": "https://www.microsoft.com/en-us/research/people/jolarso/",
+                "title": "Partner Data Architect"
+            }
+        ],
+        "section_content": {
+            "AutoQ: Automated query synthesis": "This limitation motivated the development of GraphRAG a system designed to answer global queries. GraphRAG’s evaluation requirements subsequently led to the creation of AutoQ, a method for synthesizing these global queries for any dataset.",
+            "AutoE: Automated evaluation framework": "Our evaluation of GraphRAG focused on analyzing key qualities of answers to global questions. The following qualities were used for the current evaluation:",
+            "AutoD: Automated data sampling and summarization": "Text datasets have an underlying topical structure, but the depth, breadth, and connectivity of that structure can vary widely. This variability makes it difficult to evaluate RAG systems consistently, as results may reflect the idiosyncrasies of the dataset rather than the system’s general capabilities.",
+            "Supporting the community with open data and tools": "Since the release of the GraphRAG paper, we’ve received many requests to share the dataset of the Behind the Tech\n(opens in new tab)\n podcast transcripts we used in our evaluation. An updated version of this dataset is now available in the BenchmarkQED repository\n(opens in new tab)\n, alongside the AP News dataset containing 1,397 health-related articles, licensed for open release."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/frodokem-a-conservative-quantum-safe-cryptographic-algorithm/",
+        "title": "FrodoKEM: A conservative quantum-safe cryptographic algorithm",
+        "published_date": "May 27, 2025",
+        "authors": [
+            {
+                "name": "Patrick Longa",
+                "url": "https://www.microsoft.com/en-us/research/people/plonga/",
+                "title": "Principal Researcher"
+            }
+        ],
+        "section_content": {
+            "The quantum threat to cryptography": "For decades, modern cryptography has relied on mathematical problems that are practically impossible for classical computers to solve without a secret key. Cryptosystems like RSA, Diffie-Hellman key-exchange, and elliptic curve-based schemes—which rely on the hardness of the integer factorization and (elliptic curve) discrete logarithm problems—secure communications on the internet, banking transactions, and even national security systems. However, the emergence of quantum computing poses a significant threat to these cryptographic schemes.",
+            "The NIST Post-Quantum Cryptography Standardization effort": "In 2017, the U.S. National Institute of Standards and Technology (NIST) launched the Post-Quantum Cryptography Standardization project\n(opens in new tab)\n to evaluate and select cryptographic algorithms capable of withstanding quantum attacks. As part of this initiative, NIST sought proposals for two types of cryptographic primitives: key encapsulation mechanisms (KEMs)—which enable two parties to securely derive a shared key to establish an encrypted connection, similar to traditional key exchange schemes—and digital signature schemes.",
+            "International standardization of post-quantum cryptography": "Beyond NIST, other international standardization bodies have been actively working on quantum-resistant cryptographic solutions. The International Organization for Standardization (ISO) is leading a global effort to standardize additional PQC algorithms. Notably, European government agencies—including Germany’s BSI\n(opens in new tab)\n, the Netherlands’ NLNCSA and AIVD\n(opens in new tab)\n, and France’s ANSSI\n(opens in new tab)\n—have shown strong support for FrodoKEM, recognizing it as a conservative alternative to structured lattice-based schemes.",
+            "What is FrodoKEM?": "FrodoKEM is a key encapsulation mechanism (KEM) based on the Learning with Errors (LWE) problem, a cornerstone of lattice-based cryptography. Unlike structured lattice-based schemes such as ML-KEM, FrodoKEM is built on generic, unstructured lattices, i.e., it is based on the plain LWE problem.",
+            "Lattices and the Learning with Errors (LWE) problem": "Lattice-based cryptography relies on the mathematical structure of lattices, which are regular arrangements of points in multidimensional space. A lattice is defined as the set of all integer linear combinations of a set of basis vectors. The difficulty of certain computational problems on lattices, such as the Shortest Vector Problem (SVP) and the Learning with Errors (LWE) problem, forms the basis of lattice-based schemes.",
+            "How FrodoKEM Works": "FrodoKEM follows the standard paradigm of a KEM, which consists of three main operations—key generation, encapsulation, and decapsulation—performed interactively between a sender and a recipient with the goal of establishing a shared secret key:",
+            "Performance: Strong security has a cost": "Not relying on additional algebraic structure certainly comes at a cost for FrodoKEM in the form of increased protocol runtime and bandwidth. The table below compares the performance and key sizes corresponding to the FrodoKEM level 1 parameter set (variant called “FrodoKEM-640-AES”) and the respective parameter set of ML-KEM (variant called “ML-KEM-512”). These parameter sets are intended to match or exceed the brute force security of AES-128. As can be seen, the difference in speed and key sizes between FrodoKEM and ML-KEM is more than an order of magnitude. Nevertheless, the runtime of the FrodoKEM protocol remains reasonable for most applications. For example, on our benchmarking platform clocked at 3.2GHz, the measured runtimes are 0.97 ms, 1.9 ms, and 3.2 ms for security levels 1, 2, and 3, respectively.",
+            "A holistic design made with security in mind": "FrodoKEM’s design principles support security beyond its reliance on generic, unstructured lattices to minimize the attack surface of potential future cryptanalytic threats. Its parameters have been carefully chosen with additional security margins to withstand advancements in known attacks. Furthermore, FrodoKEM is designed with simplicity in mind—its internal operations are based on straightforward matrix-vector arithmetic using integer coefficients reduced modulo a power of two. These design decisions facilitate simple, compact and secure implementations that are also easier to maintain and to protect against side-channel attacks.",
+            "Conclusion": "After years of research and analysis, the next generation of post-quantum cryptographic algorithms has arrived. NIST has chosen strong PQC protocols that we believe will serve Microsoft and its customers well in many applications. For security-sensitive applications, FrodoKEM offers a secure yet practical approach for post-quantum cryptography. While its reliance on unstructured lattices results in larger key sizes and higher computational overhead compared to structured lattice-based alternatives, it provides strong security assurances against potential future attacks. Given the ongoing standardization efforts and its endorsement by multiple governmental agencies, FrodoKEM is well-positioned as a viable alternative for organizations seeking long-term cryptographic resilience in a post-quantum world.",
+            "Further Reading": "For those interested in learning more about FrodoKEM, post-quantum cryptography, and lattice-based cryptography, the following resources provide valuable insights:"
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/magentic-ui-an-experimental-human-centered-web-agent/",
+        "title": "Magentic-UI, an experimental human-centered web agent",
+        "published_date": "May 19, 2025",
+        "authors": [
+            {
+                "name": "Hussein Mozannar",
+                "url": "https://www.microsoft.com/en-us/research/people/hmozannar/",
+                "title": "Senior Researcher"
+            },
+            {
+                "name": "Gagan Bansal",
+                "url": "https://www.microsoft.com/en-us/research/people/gaganbansal/",
+                "title": "Senior Researcher"
+            },
+            {
+                "name": "Cheng Tan",
+                "url": "https://www.microsoft.com/en-us/research/people/chetan/",
+                "title": "Principal Software Development Engineer"
+            },
+            {
+                "name": "Adam Fourney",
+                "url": "https://www.microsoft.com/en-us/research/people/adamfo/",
+                "title": "Senior Principal Researcher"
+            },
+            {
+                "name": "Victor Dibia",
+                "url": "https://www.microsoft.com/en-us/research/people/victordibia/",
+                "title": "Principal Research Software Engineer"
+            },
+            {
+                "name": "Friederike Niedtner",
+                "url": "https://www.microsoft.com/en-us/research/people/fniedtner/",
+                "title": "Principal Technical Research Program Manager"
+            },
+            {
+                "name": "Jack Gerrits",
+                "url": "https://www.microsoft.com/en-us/research/people/jagerrit/",
+                "title": "Principal Software Development Engineer"
+            },
+            {
+                "name": "Jacob Alber",
+                "url": "https://www.microsoft.com/en-us/research/people/jaalber/",
+                "title": "Principal Software Engineer"
+            },
+            {
+                "name": "Jingya Chen",
+                "url": "https://www.linkedin.com/in/jingya-chen-cc/",
+                "title": "UX Designer"
+            },
+            {
+                "name": "Griffin Bassman",
+                "url": "https://www.microsoft.com/en-us/research/people/gbassman/",
+                "title": "Software Engineer II"
+            },
+            {
+                "name": "Erkang (Eric) Zhu",
+                "url": "https://www.microsoft.com/en-us/research/people/ekzhu/",
+                "title": "Principal Researcher"
+            },
+            {
+                "name": "Peter Chang",
+                "url": "https://www.microsoft.com/en-us/research/people/petchang/",
+                "title": "Senior Software Development Engineer"
+            },
+            {
+                "name": "Ricky Loynd",
+                "url": "https://www.microsoft.com/en-us/research/people/riloynd/",
+                "title": "Senior Research Software Engineer"
+            },
+            {
+                "name": "Maya Murad",
+                "url": "https://www.microsoft.com/en-us/research/people/mayamurad/",
+                "title": "Senior Technical PM, AI Frontiers"
+            },
+            {
+                "name": "Rafah Hosn",
+                "url": "https://www.microsoft.com/en-us/research/people/raaboulh/",
+                "title": "Partner, Group Program Manager"
+            },
+            {
+                "name": "Ece Kamar",
+                "url": "https://www.microsoft.com/en-us/research/people/eckamar/",
+                "title": "VP and Lab Director of AI Frontiers"
+            },
+            {
+                "name": "Saleema Amershi",
+                "url": "https://www.microsoft.com/en-us/research/people/samershi/",
+                "title": "Partner Research Manager"
+            }
+        ],
+        "section_content": {
+            "How is Magentic-UI human-centered?": "While many web agents promise full autonomy, in practice users can be left unsure of what the agent can do, what it is currently doing, and whether they have enough control to intervene when something goes wrong or doesn’t occur as expected. By contrast, Magentic-UI considers user needs at every stage of interaction. We followed a human-centered design methodology in building Magentic-UI by prototyping and obtaining feedback from pilot users during its design.",
+            "Architecture": "Magentic-UI’s underlying system is a team of specialized agents adapted from AutoGen’s Magentic-One system. The agents work together to create a modular system:",
+            "Evaluating Magentic-UI": "Magentic-UI innovates through its ability to integrate human feedback in its planning and execution of tasks. We performed a preliminary automated evaluation to showcase this ability on the GAIA benchmark\n(opens in new tab)\n for agents with a user-simulation experiment.",
+            "Learning and reusing plans": "As described above, once Magentic-UI completes a task, users have the option for Magentic-UI to learn a plan based on the execution of the task. These plans are saved in a plan gallery, which users and Magentic-UI can access in the future.",
+            "Safety and control": "Magentic-UI can surf the live internet and execute code. With such capabilities, we need to ensure that Magentic-UI acts in a safe and secure manner. The following features, design decisions, and evaluations were made to ensure this:",
+            "Open research questions": "Magentic-UI provides a tool for researchers to study critical questions in agentic systems and particularly on human-agent interaction. In a previous report\n(opens in new tab)\n, we outlined 12 questions for human-agent communication, and Magentic-UI provides a vehicle to study these questions in a realistic setting. A key question among these is how we enable humans to efficiently intervene and provide feedback to the agent while executing a task. Humans should not have to constantly watch the agent. Ideally, the agent should know when to reach out for help and provide the necessary context for the human to assist it. A second question is about safety. As agents interact with the live web, they may become prone to attacks from malicious actors. We need to study what necessary safeguards are needed to protect the human from side effects without adding a heavy burden on the human to verify every agent action. There are also many other questions surrounding security, personalization, and learning that Magentic-UI can help with studying.",
+            "Conclusion": "Magentic-UI is an open-source agent prototype that works with people to complete complex tasks that require multi-step planning and browser use. As agentic systems expand in the scope of tasks they can complete, Magentic-UI’s design enables better transparency into agent actions and enables human control to ensure safety and reliability. Moreover, by facilitating human intervention, we can improve performance while still reducing human cost in completing tasks on aggregate. Today we have released the first version of Magentic-UI. Looking ahead, we plan to continue developing it in the open with the goal of improving its capabilities and answering research questions on human-agent collaboration. We invite the research community to extend and reuse Magentic-UI for their scientific explorations and domains."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/predicting-and-explaining-ai-model-performance-a-new-approach-to-evaluation/",
+        "title": "Predicting and explaining AI model performance: A new approach to evaluation",
+        "published_date": "May 12, 2025",
+        "authors": [
+            {
+                "name": "Lexin Zhou",
+                "url": "https://lexzhou.github.io/",
+                "title": "Research Assistant"
+            },
+            {
+                "name": "Xing Xie",
+                "url": "https://www.microsoft.com/en-us/research/people/xingx/",
+                "title": "Partner Research Manager"
+            }
+        ],
+        "section_content": {
+            "ADeLe: An ability-based approach to task evaluation": "The framework uses ADeLe (annotated-demand-levels), a technique that assesses how demanding a task is for an AI model by applying measurement scales for 18 types of cognitive and knowledge-based abilities. This difficulty rating is based on a detailed rubric, originally developed for human tasks and shown to work reliably when applied by AI models.",
+            "Evaluation results": "Using ADeLe, the team evaluated 20 popular AI benchmarks and uncovered three key findings: 1) Current AI benchmarks have measurement limitations; 2) AI models show distinct patterns of strengths and weaknesses across different capabilities; and 3) ADeLe provides accurate predictions of whether AI systems will succeed or fail on a new task.",
+            "Looking ahead": "ADeLe can be extended to multimodal and embodied AI systems, and it has the potential to serve as a standardized framework for AI research, policymaking, and security auditing."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/research-focus-week-of-may-7-2025/",
+        "title": "Research Focus: Week of May 7, 2025",
+        "published_date": "May 7, 2025",
+        "authors": [],
+        "section_content": {
+            "NEW RESEARCH": "This work introduces ARTIST (Agentic Reasoning and Tool Integration in Self-improving Transformers), a new paradigm for LLM reasoning that expands beyond traditional language-only inference.",
+            "Agentic Reasoning and Tool Integration for LLMs via Reinforcement Learning": "This work introduces ARTIST (Agentic Reasoning and Tool Integration in Self-improving Transformers), a new paradigm for LLM reasoning that expands beyond traditional language-only inference.",
+            "PODCAST": "What if you could find materials with tailored properties without ever entering the lab? The Materialism Podcast, which is dedicated to exploring materials science and engineering, talks with Tian Xie from Microsoft Research to discuss MatterGen, an AI tool which accelerates materials science discovery. Tune in to hear a discussion of the new Azure AI Foundry, where MatterGen will interact with and support MatterSim, an advanced deep learning model designed to simulate the properties of materials across a wide range of elements, temperatures, and pressures."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/microsoft-fusion-summit-explores-how-ai-can-accelerate-fusion-research/",
+        "title": "Microsoft Fusion Summit explores how AI can accelerate fusion research",
+        "published_date": "May 7, 2025",
+        "authors": [
+            {
+                "name": "Kenji Takeda",
+                "url": "https://www.microsoft.com/en-us/research/people/kenjitak/",
+                "title": "Director, Research Incubations"
+            },
+            {
+                "name": "Shruti Rajurkar",
+                "url": "https://www.microsoft.com/en-us/research/people/srajurkar/",
+                "title": "Senior Research Technical Program Manager Research Incubations"
+            },
+            {
+                "name": "Ade Famoti",
+                "url": "https://www.microsoft.com/en-us/research/people/adfamoti/",
+                "title": "Senior Director, Research Incubations"
+            }
+        ],
+        "section_content": {
+            "Applying AI to fusion research": "North America’s largest fusion facility, DIII-D\n(opens in new tab)\n, operated by General Atomics and owned by the US Department of Energy (DOE), provides a unique platform for developing and testing AI applications for fusion research, thanks to its pioneering data and digital twin platform.",
+            "Exploring AI’s broader impact on fusion engineering": "Lightning talks from Microsoft Research labs addressed the central question of AI’s potential to accelerate fusion research and engineering. Speakers covered a wide range of applications—from using gaming AI for plasma control and robotics for remote maintenance to physics-informed AI for simulating materials and plasma behavior. Closing the session, Archie Manoharan, Microsoft’s director of nuclear engineering for Cloud Operations and Infrastructure, emphasized the need for a comprehensive energy strategy, one that incorporates renewables, efficiency improvements, storage solutions, and carbon-free sources like fusion.",
+            "Global collaboration and next steps": "Microsoft is collaborating with ITER\n(opens in new tab)\n to help advance the technologies and infrastructure needed to achieve fusion ignition—the critical point where a self-sustaining fusion reaction begins, using Microsoft 365 Copilot, Azure OpenAI Service, Visual Studio, and GitHub\n(opens in new tab)\n. Microsoft Research is now cooperating with ITER to identify where AI can be leveraged to model future experiments to optimize its design and operations."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/societal-ai-building-human-centered-ai-systems/",
+        "title": "Societal AI: Building human-centered AI systems",
+        "published_date": "May 5, 2025",
+        "authors": [
+            {
+                "name": "Beibei Shi",
+                "url": "https://www.microsoft.com/en-us/research/people/besh/",
+                "title": "Principal Research PM"
+            },
+            {
+                "name": "Haotian Li",
+                "url": "https://www.microsoft.com/en-us/research/people/haotianli/",
+                "title": "Researcher"
+            },
+            {
+                "name": "Xing Xie",
+                "url": "https://www.microsoft.com/en-us/research/people/xingx/",
+                "title": "Partner Research Manager"
+            }
+        ],
+        "section_content": {
+            "What is Societal AI?": "Societal AI is an emerging interdisciplinary area of study that examines how AI intersects with social systems and public life. It focuses on two main areas: (1) the impact of AI technologies on fields like education, labor, and governance; and (2) the challenges posed by these systems, such as evaluation, accountability, and alignment with human values. The goal is to guide AI development in ways that respond to real-world needs.",
+            "Tracing the development of Societal AI": "Societal AI began nearly a decade ago at Microsoft Research Asia, where early work on personalized recommendation systems uncovered risks like echo chambers, where users are repeatedly exposed to similar viewpoints, and polarization, which can deepen divisions between groups. Those findings led to deeper investigations into privacy, fairness, and transparency, helping inform Microsoft’s broader approach to responsible AI.",
+            "Key insights": "The white paper outlines several important considerations for the field:",
+            "Guiding principles for responsible integration": "The research agenda is grounded in three key principles:",
+            "Ten critical questions": "These questions span both technical and societal concerns:",
+            "Looking ahead": "Microsoft is committed to fostering collaboration and invites others to take part in developing governance systems. As new challenges arise, the responsible use of AI for the public good will remain central to our research.",
+            "Acknowledgments": "We are grateful for the contributions of the researchers, collaborators, and reviewers who helped shape this white paper."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/research-focus-week-of-april-21-2025/",
+        "title": "Research Focus: Week of April 21, 2025",
+        "published_date": "April 23, 2025",
+        "authors": [],
+        "section_content": {
+            "CONFERENCE": "Microsoft is proud to be a sponsor of the thirteenth International Conference on Learning Representations (ICLR). This gathering is dedicated to the advancement of representation learning, which is a branch of AI. We are pleased to share that Microsoft has more than 30 accepted papers at this year’s conference, which we invite you to preview.",
+            "NEW RESEARCH": "Distill-MOS is a compact and efficient speech quality assessment model with dramatically reduced size—over 100x smaller than the reference model—enabling efficient, non-intrusive evaluation in real-world, low-resource settings.",
+            "Distill-MOS: A compact speech-quality assessment model": "Distill-MOS is a compact and efficient speech quality assessment model with dramatically reduced size—over 100x smaller than the reference model—enabling efficient, non-intrusive evaluation in real-world, low-resource settings.",
+            "PODCAST": "Jonathan Carlson, Managing Director of Microsoft Research Health Futures, joins the Healthcare Unfiltered show to explore the evolution of AI in medicine, from the early days to cutting-edge innovations like ambient clinical intelligence. This podcast explores how pre-trained models and machine learning are transforming care delivery, as well as the future of biomedicine and healthcare, including important ethical and practical questions.",
+            "Collaborating to Affect Change for Rural Health Care with Innovation and Technology": "Senior Vice President of Microsoft Health Jim Weinstein joins Dan Liljenquist, Chief Strategy Officer from Intermountain Health, on the NEJM Catalyst podcast for a discussion of their combined expertise and resources and their collaboration to address healthcare challenges in the rural United States. These challenges include limited access to care, rising mortality rates, and severe staffing shortages. Working together, they aim to create a scalable model that can benefit both rural and urban health care systems. Key goals include expanding access through telemedicine and increasing cybersecurity, ultimately improving the quality of care delivered and financial stability for rural communities.",
+            "Empowering patients and healthcare consumers in the age of generative AI": "Two champions of patient-centered digital health join Microsoft Research President Peter Lee to talk about how AI is reshaping healthcare in terms of patient empowerment and emerging digital health business models. Dave deBronkart, a cancer survivor and longtime advocate for patient empowerment, discusses how AI tools like ChatGPT can help patients better understand their conditions, navigate the healthcare system, and communicate more effectively with clinicians. Christina Farr, a healthcare investor and former journalist, talks about the evolving digital health–startup ecosystem, highlighting where AI is having the most meaningful impact—particularly in women’s health, pediatrics, and elder care. She also explores consumer trends, like the rise of cash-pay healthcare.",
+            "Beyond the Image: AI’s Expanding Role in Healthcare": "Jonathan Carlson, Managing Director of Microsoft Research Health Futures, joins the Healthcare Unfiltered show to explore the evolution of AI in medicine, from the early days to cutting-edge innovations like ambient clinical intelligence. This podcast explores how pre-trained models and machine learning are transforming care delivery, as well as the future of biomedicine and healthcare, including important ethical and practical questions."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/the-future-of-ai-in-knowledge-work-tools-for-thought-at-chi-2025/",
+        "title": "The Future of AI in Knowledge Work: Tools for Thought at CHI 2025",
+        "published_date": "April 18, 2025",
+        "authors": [
+            {
+                "name": "Sean Rintel",
+                "url": "https://www.microsoft.com/en-us/research/people/serintel/",
+                "title": "Senior Principal Research Manager"
+            },
+            {
+                "name": "Leon Reicherts",
+                "url": "https://www.microsoft.com/en-us/research/people/t-lreicherts/",
+                "title": "Researcher"
+            },
+            {
+                "name": "Lev Tankelevitch",
+                "url": "https://www.microsoft.com/en-us/research/people/levt/",
+                "title": "Senior Researcher"
+            },
+            {
+                "name": "Advait Sarkar",
+                "url": "https://www.microsoft.com/en-us/research/people/advait/",
+                "title": "Senior Researcher"
+            },
+            {
+                "name": "Pratik Ghosh",
+                "url": "https://www.microsoft.com/en-us/research/people/prghos/",
+                "title": "Senior Research Designer"
+            },
+            {
+                "name": "Richard Banks",
+                "url": "https://www.microsoft.com/en-us/research/people/rbanks/",
+                "title": "Principal Design Manager"
+            }
+        ],
+        "section_content": {
+            "AI’s effects on thinking at work": "With a single prompt, AI can generate a wide range of outputs, from documents and meeting agendas to answers and automated workflows. But how are people’s thinking processes affected when they delegate these tasks to AI?",
+            "Enhancing decision-making with AI": "Decision-making is central to knowledge work, and AI is increasingly being used to help people make decisions in complex fields like healthcare and finance. However, how much agency do knowledge workers retain when AI is involved?",
+            "Are we on track? Making meetings better with AI": "Meetings are often criticized for being ineffective. While this is sometimes due to poor practices—such as weak agendas, late starts, and unclear facilitation—we believe the deeper issue is a lack of meeting intentionality: knowing why a meeting is occurring and keeping the discussion focused on that purpose. A key challenge is maintaining goal clarity throughout a meeting.",
+            "Encouraging diverse problem-solving brainstorming with AI": "Diverse perspectives drive creative problem-solving in organizations, but individuals often lack access to varied viewpoints. In the paper “YES AND: An AI-Powered Problem-Solving Framework for Diversity of Thought,” we build on the idea of “design improv” to explore a multi-agent AI prototype that simulates conversations with persona-based agents representing a range of expertise.",
+            "Next steps: Expanding the Tools for Thought community": "We believe the best way to advance next-generation tools for thought is by bringing together a wide range of perspectives and approaches. In addition to our four papers, we are also conducting a workshop at CHI on April 26, co-organized with collaborators from industry and academia: Tools for Thought: Research and Design for Understanding, Protecting, and Augmenting Human Cognition with Generative AI."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/engagement-user-expertise-and-satisfaction-key-insights-from-the-semantic-telemetry-project/",
+        "title": "Engagement, user expertise, and satisfaction: Key insights from the Semantic Telemetry Project",
+        "published_date": "April 14, 2025",
+        "authors": [
+            {
+                "name": "Amber Hoak",
+                "url": "https://www.microsoft.com/en-us/research/people/amhoak/",
+                "title": "Senior Software Development Engineer"
+            },
+            {
+                "name": "Scott Counts",
+                "url": "https://www.microsoft.com/en-us/research/people/counts/",
+                "title": "Senior Principal Research Manager"
+            },
+            {
+                "name": "Kate Lytvynets",
+                "url": "https://www.microsoft.com/en-us/research/people/kalytv/",
+                "title": "Software Development Engineer"
+            },
+            {
+                "name": "David Tittsworth",
+                "url": "https://www.microsoft.com/en-us/research/people/datittsw/",
+                "title": "Software Engineer"
+            },
+            {
+                "name": "Siddharth Suri",
+                "url": "https://www.microsoft.com/en-us/research/people/suri/",
+                "title": "Senior Principal Researcher"
+            },
+            {
+                "name": "Nirupama Chandrasekaran",
+                "url": "https://www.microsoft.com/en-us/research/people/niruc/",
+                "title": "Principal Research Software Engineer"
+            },
+            {
+                "name": "Ben Cutler",
+                "url": "https://www.microsoft.com/en-us/research/people/bcutler/",
+                "title": "Senior Director"
+            },
+            {
+                "name": "Weiwei Yang",
+                "url": "https://www.microsoft.com/en-us/research/people/weiwya/",
+                "title": "Principal SDE Manager"
+            }
+        ],
+        "section_content": {
+            "What keeps Bing Chat users engaged?": "We conducted a study of a random sample of 45,000 anonymous Bing Chat users during May 2024. The data was grouped into three cohorts based on user activity over the course of the month:",
+            "Novice queries are becoming more complex": "We looked at Bing Chat data from January through August 2024 and we classified chats using our User Expertise classifier. When we looked at how the different user expertise groups were using the tool for professional tasks, we discovered that proficient and expert users tend to do more professional tasks with high complexity in topics like programming and scripting, professional writing and editing, and physics and chemistry.",
+            "How does user satisfaction vary according to expertise?": "We classified both the user expertise and AI agent expertise for anonymous interactions in Copilot in Bing. We compared the level of user and AI agent expertise with our user satisfaction classifier.",
+            "Conclusion": "Understanding these metrics is vital for grasping user behavior over time and relating it to real-world business indicators. Users are finding value from complex professional knowledge work tasks, and novices are quickly adapting to the tool and finding these high value use-cases. By analyzing user satisfaction in conjunction with expertise levels, we can tailor our tools to better meet the needs of different user groups. Ultimately, these insights can help improve user understanding across a variety of tasks."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/debug-gym-an-environment-for-ai-coding-tools-to-learn-how-to-debug-code-like-programmers/",
+        "title": "Debug-gym: an environment for AI coding tools to learn how to debug code like programmers",
+        "published_date": "April 10, 2025",
+        "authors": [
+            {
+                "name": "Eric Yuan",
+                "url": "https://www.microsoft.com/en-us/research/people/eryua/",
+                "title": "Senior Researcher"
+            },
+            {
+                "name": "Morgane Moss",
+                "url": "https://mormio.github.io/",
+                "title": "Intern"
+            },
+            {
+                "name": "Charbel Feghali",
+                "url": "https://www.linkedin.com/in/charbel-feghali-link",
+                "title": "Student"
+            },
+            {
+                "name": "Chinmay Singh",
+                "url": "https://www.microsoft.com/en-us/research/people/chsingh/",
+                "title": "Principal Research Software Development Engineer"
+            },
+            {
+                "name": "Darya Moldavskaya",
+                "url": "https://www.microsoft.com/en-us/research/people/dmoldavskaya/",
+                "title": "Senior Technical Program Manager"
+            },
+            {
+                "name": "Drew MacPhee",
+                "url": "https://www.linkedin.com/in/drewmacphee",
+                "title": "R&I Service Manager"
+            },
+            {
+                "name": "Lucas Caccia",
+                "url": "https://www.microsoft.com/en-us/research/people/lpagecaccia/",
+                "title": "Senior Researcher"
+            },
+            {
+                "name": "Matheus Pereira",
+                "url": "https://www.microsoft.com/en-us/research/people/matpereira/",
+                "title": "Senior Software Development Engineer"
+            },
+            {
+                "name": "Minseon Kim",
+                "url": "https://www.microsoft.com/en-us/research/people/minseonkim/",
+                "title": "Post Doc Researcher"
+            },
+            {
+                "name": "Alessandro Sordoni",
+                "url": "https://www.microsoft.com/en-us/research/people/alsordon/",
+                "title": "Principal Researcher"
+            },
+            {
+                "name": "Marc-Alexandre Côté",
+                "url": "https://www.microsoft.com/en-us/research/people/macote/",
+                "title": "Principal Researcher"
+            }
+        ],
+        "section_content": {
+            "Introducing debug-gym": "A natural research question emerges: to what degree can LLMs use interactive debugging tools such as pdb? To explore this question, we released debug-gym\n(opens in new tab)\n – an environment that allows code-repairing agents to access tools for active information-seeking behavior. Debug-gym expands an agent’s action and observation space with feedback from tool usage, enabling setting breakpoints, navigating code, printing variable values, and creating test functions. Agents can interact with tools to investigate code or rewrite it, if confident. We believe interactive debugging with proper tools can empower coding agents to tackle real-world software engineering tasks and is central to LLM-based agent research. The fixes proposed by a coding agent with debugging capabilities, and then approved by a human programmer, will be grounded in the context of the relevant codebase, program execution and documentation, rather than relying solely on guesses based on previously seen training data.",
+            "Early experimentation: promising signal": "For our initial attempt to validate that LLMs perform better on coding tests when they have access to debugging tools, we built a simple prompt-based agent and provided it with access to the following debug tools: eval, view, pdb, rewrite, and listdir. We used nine different LLMs as the backbone for our agent. Detailed results can be found in the technical report\n(opens in new tab)\n.\n(opens in new tab)",
+            "Future work": "We believe that training or fine-tuning LLMs can enhance their interactive debugging abilities. This requires specialized data, such as trajectory data that records agents interacting with a debugger to gather information before suggesting a fix. Unlike conventional reasoning problems, interactive debugging involves generating actions at each step that trigger feedback from the environment. This feedback helps the agent make new decisions, requiring dense data like the problem description and the sequence of actions leading to the solution.",
+            "Acknowledgements": "We thank Ruoyao Wang for their insightful discussion on building interactive debugging agents, Chris Templeman and Elaina Maffeo for their team coaching, Jessica Mastronardi and Rich Ciapala for their kind support in project management and resource allocation, and Peter Jansen for providing valuable feedback for the technical report."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/research-focus-week-of-april-7-2025/",
+        "title": "Research Focus: Week of April 7, 2025",
+        "published_date": "April 9, 2025",
+        "authors": [],
+        "section_content": {
+            "NEW RESEARCH": "Analyzing the physical properties of individual galaxies is a fundamental skill in astronomy. It requires a thorough understanding of galaxy formation theories and the ability to interpret vast amounts of observational data. However, even for seasoned astronomers, this process can be time-consuming and labor-intensive. To help astronomers accelerate this fundamental process, researchers from Microsoft and external colleagues introduce Mephisto, research designed to analyze extremely distant galaxies observed by the James Webb Space Telescope (JWST).",
+            "APPLIED AI": "Japan Airlines (JAL) is using technology developed by Microsoft Research to deploy an AI app that helps flight crews communicate more effectively with ground staff when something unexpected comes up during a flight."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/vidtok-introduces-compact-efficient-tokenization-to-enhance-ai-video-processing/",
+        "title": "VidTok introduces compact, efficient tokenization to enhance AI video processing",
+        "published_date": "April 2, 2025",
+        "authors": [
+            {
+                "name": "Tianyu He",
+                "url": "https://www.microsoft.com/en-us/research/people/tianyuhe/",
+                "title": "Senior Researcher"
+            },
+            {
+                "name": "Junliang Guo",
+                "url": "N/A",
+                "title": "Senior Researcher"
+            },
+            {
+                "name": "Jiang Bian",
+                "url": "https://www.microsoft.com/en-us/research/people/jiabia/",
+                "title": "Partner Research Manager"
+            }
+        ],
+        "section_content": {
+            "How VidTok works": "VidTok is a technique that converts raw video footage into a format that AI can easily work with and understand, a process called video tokenization. This process converts complex visual information into compact, structured tokens, as shown in Figure 1.",
+            "Architecture": "The VidTok framework builds on a classic 3D encoder-decoder structure but introduces 2D and 1D processing techniques to handle spatial and temporal information more efficiently. Because 3D architectures are computationally intensive, VidTok combines them with less resource-intensive 2D and 1D methods to reduce computational costs while maintaining video quality.",
+            "Quantization": "To efficiently compress video data, AI systems often use quantization to reduce the amount of information that needs to be stored or transmitted. A traditional method for doing this is vector quantization (VQ), which groups values together and matches them to a fixed set of patterns (known as a codebook). However, this can lead to an inefficient use of patterns and lower video quality.",
+            "Training": "Training video tokenizers requires significant computing power. VidTok uses a two-stage process:",
+            "Evaluating VidTok": "VidTok’s performance evaluation using the MCL-JCV benchmark—a comprehensive video quality assessment dataset—and an internal dataset demonstrates its superiority over existing state-of-the-art models in video tokenization. The assessment, which covered approximately 5,000 videos of various types, employed four standard metrics to measure video quality:",
+            "Looking ahead": "VidTok represents a significant development in video tokenization and processing. Its innovative architecture and training approach enable improved performance across various video quality metrics, making it a valuable tool for video analysis and compression tasks. Its capacity to model complex visual dynamics could improve the efficiency of video systems by enabling AI processing on more compact units rather than raw pixels."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/research-focus-week-of-march-24-2025/",
+        "title": "Research Focus: Week of March 24, 2025",
+        "published_date": "March 26, 2025",
+        "authors": [],
+        "section_content": {
+            "NEW RESEARCH": "Researchers review recent advances in deep generative models for protein design, with a focus on sequence-structure co-generation methods. They describe the key methodological and evaluation principles underlying these methods, highlight recent advances from the literature, and discuss opportunities for continued development of sequence-structure co-generation approaches.",
+            "PODCAST": "Most of us think of generative AI in the context of text or image generation, but it’s also a powerful tool for scientific discovery. In this episode of the Leading the Shift podcast\n(opens in new tab)\n, host Susan Etlinger speaks with Ade Famoti, a senior leader on the Microsoft Research Accelerator team. Ade discusses what he calls “AI’s physics moment,” and why he believes generative AI feels fundamentally different from past platform shifts. Ade shares examples of the work Microsoft Research is doing to uncover the opportunities of generative AI for materials discovery—to improve energy efficiency and carbon capture, and for drug discovery, to fight disease. Ade also highlights the role of culture in building trust, informing priorities and driving adoption of emerging technologies.",
+            "VIDEO": "In this interview, the director of Microsoft Research AI for Science, Chris Bishop, discusses how AI is unlocking new scientific outcomes, from drug creation to materials generation to improved climate modeling."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/metasurface-unlocking-the-future-of-wireless-sensing-and-communication/",
+        "title": "Metasurface: Unlocking the future of wireless sensing and communication",
+        "published_date": "March 19, 2025",
+        "authors": [
+            {
+                "name": "Lili Qiu",
+                "url": "https://www.microsoft.com/en-us/research/people/liliqiu/",
+                "title": "Assistant Managing Director"
+            },
+            {
+                "name": "Hao Pan",
+                "url": "https://www.microsoft.com/en-us/research/people/panhao/",
+                "title": "Senior Researcher"
+            }
+        ],
+        "section_content": {
+            "Metasurfaces optimize GNSS for accurate indoor positioning": "While GNSS is widely used for outdoor positioning and navigation, its indoor performance is often hindered by signal blockage, reflection, and attenuation caused by physical obstacles. Additional technologies like Wi-Fi and Bluetooth Low Energy (BLE) are often employed to address these issues. However, these solutions require extra infrastructure, are costly, and are complicated to deploy. Accurate positioning also typically depends on specialized hardware and software on mobile devices.",
+            "Metasurfaces extend millimeter-wave coverage": "Millimeter waves enable the high-speed, low-latency performance needed for 5G and 6G communication systems. While commercial products like 60 GHz Wi-Fi routers and mobile devices are becoming popular, their limited coverage and susceptibility to signal obstruction restrict their widespread application.",
+            "Metasurfaces support uniform heating in microwave ovens": "Microwave ovens often heat unevenly, creating cold spots in food. These can allow harmful bacteria and other pathogens to survive, increasing the risk of foodborne illnesses. Uneven heating can cause eggs to burst or create “hot spots” that can scald.",
+            "Advancing wireless innovation": "Wireless sensing and communication technologies are evolving rapidly, driving innovation across a wide range of applications. We are continuing to push the boundaries of these technologies—particularly in metasurface development—while working to create practical solutions for a variety of use cases."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/claimify-extracting-high-quality-claims-from-language-model-outputs/",
+        "title": "Claimify: Extracting high-quality claims from language model outputs",
+        "published_date": "March 19, 2025",
+        "authors": [
+            {
+                "name": "Dasha Metropolitansky",
+                "url": "https://www.microsoft.com/en-us/research/people/dasham/",
+                "title": "Research Data Scientist"
+            }
+        ],
+        "section_content": {
+            "Key issues in claim extraction": "As a case study, we prompted OpenAI’s GPT-4o model to “provide an overview of challenges in emerging markets” based on a collection of news articles. Here is its output:",
+            "Introducing Claimify": "The case study highlights that claim extraction is surprisingly error-prone. Our paper demonstrates that the issues identified above are common across LLM-based claim extraction methods. To minimize these errors, we created a system called Claimify[2].",
+            "Results": "In our paper, we demonstrate that Claimify outperforms existing LLM-based methods[3]. Specifically, we show that: (1) 99% of claims extracted by Claimify are entailed by their source sentence, (2) Claimify strikes the best balance between including verifiable content and excluding unverifiable content, and (3) Claimify is least likely to omit context critical to the fact-checking verdict.",
+            "Next steps": "We’re currently working on new methods for evaluating LLM-generated texts. We anticipate that the high-quality claims extracted by Claimify will help not only in verifying the veracity of LLM outputs, but also in assessing their overall quality – especially when gold-standard references are difficult to create (e.g., long-form texts where people may disagree on what defines “good” content). For example, we recently used Claimify to evaluate the comprehensiveness and diversity of answers generated by GraphRAG, showing that GraphRAG outperforms traditional Retrieval Augmented Generation (RAG) in these areas."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/introducing-kblam-bringing-plug-and-play-external-knowledge-to-llms/",
+        "title": "Introducing KBLaM: Bringing plug-and-play external knowledge to LLMs",
+        "published_date": "March 18, 2025",
+        "authors": [
+            {
+                "name": "Taketomo Isazawa",
+                "url": "https://www.microsoft.com/en-us/research/people/t-isazawat/",
+                "title": "Researcher"
+            },
+            {
+                "name": "Xi Wang",
+                "url": "https://www.linkedin.com/in/xi-wang-660a47153/",
+                "title": "PhD Student"
+            },
+            {
+                "name": "Liana Mikaelyan",
+                "url": "https://www.microsoft.com/applied-sciences/people/liana-mikaelyan",
+                "title": "Senior Applied Scientist"
+            },
+            {
+                "name": "Mathew Salvaris",
+                "url": "https://www.microsoft.com/applied-sciences/people/mathew-salvaris",
+                "title": "Principal Applied Scientist"
+            },
+            {
+                "name": "James Hensman",
+                "url": "https://www.microsoft.com/en-us/research/people/jameshensman/",
+                "title": "Sr Principal Researcher"
+            }
+        ],
+        "section_content": {
+            "A new way to integrate knowledge": "To address these challenges, we introduce the Knowledge Base-Augmented Language Model (KBLaM) —a novel approach that integrates structured knowledge bases into pre-trained LLMs. Instead of relying on external retrieval modules or costly fine-tuning, KBLaM encodes knowledge into continuous key-value vector pairs, efficiently embedding them within the model’s attention layers using a specialized rectangular attention mechanism, which implicitly performs retrieval in an integrated manner.",
+            "Scalable, efficient, and future-ready": "At its core, KBLaM is designed to integrate structured knowledge into LLMs, making them more efficient and scalable. It achieves this by converting external knowledge bases—collections of facts structured as triples consisting of an entity, a property, and a value—into a format that LLMs can process naturally.  Such knowledge bases allow for consolidated, reliable sources of knowledge.",
+            "Enhancing interpretability and reliability": "Another major benefit of KBLaM is its interpretability. Unlike in-context learning, where knowledge injection is opaque, KBLAM’s attention weights provide clear insights into how the model utilizes knowledge tokens. Experiments show that KBLaM assigns high attention scores to relevant knowledge triples, effectively mimicking a soft retrieval process.",
+            "The future of knowledge-augmented AI": "KBLaM represents a major step forward in integrating structured knowledge into LLMs. By offering a scalable, efficient, and interpretable alternative to existing techniques, it paves the way for AI systems that can stay up to date and provide reliable, knowledge-driven responses. In fields where accuracy and trust are critical—such as medicine, finance, and scientific research—this approach has the potential to transform how language models interact with real-world information."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/semantic-telemetry-understanding-how-users-interact-with-ai-systems/",
+        "title": "Semantic Telemetry: Understanding how users interact with AI systems",
+        "published_date": "March 10, 2025",
+        "authors": [
+            {
+                "name": "Amber Hoak",
+                "url": "https://www.microsoft.com/en-us/research/people/amhoak/",
+                "title": "Senior Software Development Engineer"
+            },
+            {
+                "name": "Scott Counts",
+                "url": "https://www.microsoft.com/en-us/research/people/counts/",
+                "title": "Senior Principal Research Manager"
+            },
+            {
+                "name": "Kate Lytvynets",
+                "url": "https://www.microsoft.com/en-us/research/people/kalytv/",
+                "title": "Software Development Engineer"
+            },
+            {
+                "name": "David Tittsworth",
+                "url": "https://www.microsoft.com/en-us/research/people/datittsw/",
+                "title": "Software Engineer"
+            },
+            {
+                "name": "Siddharth Suri",
+                "url": "https://www.microsoft.com/en-us/research/people/suri/",
+                "title": "Senior Principal Researcher"
+            },
+            {
+                "name": "Ben Cutler",
+                "url": "https://www.microsoft.com/en-us/research/people/bcutler/",
+                "title": "Senior Director"
+            },
+            {
+                "name": "Weiwei Yang",
+                "url": "https://www.microsoft.com/en-us/research/people/weiwya/",
+                "title": "Principal SDE Manager"
+            }
+        ],
+        "section_content": {
+            "Topics": "To get a clear picture of how people are using Copilot in Bing, we need to first classify sessions into topical categories. To do this, we developed a topic classifier. We used the LLM classification approach described above to label the primary topic (domain) for the entire content of the chat. Although a single chat can cover multiple topics, for this analysis, we generated a single label for the primary topic of the conversation. We sampled five million anonymized Copilot in Bing chats during August and September 2024, and found that globally, 21% of all chats were about technology, with a high concentration of these chats in programming and scripting and computers and electronics.",
+            "Search versus Copilot": "Beyond analyzing topics, we compared Copilot in Bing usage to that of traditional search. Chat extends beyond traditional online search by enabling users to summarize, generate, compare, and analyze information. Human-AI interactions are conversational and more complex than traditional search (Figure 6).",
+            "Conclusion": "LLMs have enabled a new era of high-quality human-AI interaction, and with it, the capability to analyze those same interactions with high fidelity, at scale, and in near real-time. We are now able to obtain actionable insight from complex data that is not possible with traditional data science pattern-matching methods. LLM-generated classifications are pushing research into new directions that will ultimately improve user experience and satisfaction when using chat and other user-AI interaction tools."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/advancing-biomedical-discovery-overcoming-data-challenges-in-precision-medicine/",
+        "title": "Advancing biomedical discovery: Overcoming data challenges in precision medicine",
+        "published_date": "March 5, 2025",
+        "authors": [
+            {
+                "name": "Mandi Hall",
+                "url": "https://www.microsoft.com/en-us/research/people/amhal/",
+                "title": "Senior UX/CX Researcher"
+            }
+        ],
+        "section_content": {
+            "Introduction": "Modern biomedical research is driven by the promise of precision medicine—tailored treatments for individual patients through the integration of diverse, large-scale datasets. Yet, the journey from raw data to actionable insights is fraught with challenges. Our team of researchers at Microsoft Research in the Health Futures group, in collaboration with the Perelman School of Medicine at the University of Pennsylvania\n(opens in new tab)\n, conducted an in-depth exploration of these challenges in a study published in Nature Scientific Reports. The goal of this research was to identify pain points in the biomedical data lifecycle and offer actionable recommendations to enable secure data-sharing, improved interoperability, robust analysis, and foster collaboration across the biomedical research community.",
+            "Study at a glance": "A deep understanding of the biomedical discovery process is crucial for advancing modern precision medicine initiatives. To explore this, our study involved in-depth, semi-structured interviews with biomedical research professionals spanning various roles including bench scientists, computational biologists, researchers, clinicians, and data curators. Participants provided detailed insights into their workflows, from data acquisition and curation to analysis and result dissemination. We used an inductive-deductive thematic analysis to identify key challenges occurring at each stage of the data lifecycle—from raw data collection to the communication of data-driven findings.",
+            "Looking ahead": "At Microsoft Research, we believe in the power of interdisciplinarity and innovation. This study not only identifies the critical pain points that have slowed biomedical discovery but also illustrates a clear path toward improved data integrity, interoperability, and collaboration. By uniting diverse stakeholders around a common, secure, and scalable data research lifecycle, we edge closer to realizing individualized therapeutics for every patient."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/magma-a-foundation-model-for-multimodal-ai-agents-across-digital-and-physical-worlds/",
+        "title": "Magma: A foundation model for multimodal AI agents across digital and physical worlds",
+        "published_date": "February 25, 2025",
+        "authors": [
+            {
+                "name": "Swadheen Shukla",
+                "url": "https://www.microsoft.com/en-us/research/people/swads/",
+                "title": "Principal Program Manager"
+            },
+            {
+                "name": "Jianwei Yang",
+                "url": "N/A",
+                "title": "Principal Researcher"
+            },
+            {
+                "name": "Reuben Tan",
+                "url": "https://www.microsoft.com/en-us/research/people/tanreuben/",
+                "title": "Senior Researcher"
+            },
+            {
+                "name": "Qianhui Wu",
+                "url": "https://www.microsoft.com/en-us/research/people/qianhuiwu/",
+                "title": "Senior Researcher"
+            },
+            {
+                "name": "Jianfeng Gao",
+                "url": "https://www.microsoft.com/en-us/research/people/jfgao/",
+                "title": "Distinguished Scientist & Vice President"
+            }
+        ],
+        "section_content": {
+            "Performance and evaluation": "Magma is one component of a much larger vision within Microsoft Research for the future of agentic AI systems. Across various teams and projects at Microsoft, we are collectively exploring how AI systems can detect, analyze, and respond in the world to amplify human capabilities.",
+            "Relation to broader research": "Magma is one component of a much larger vision within Microsoft Research for the future of agentic AI systems. Across various teams and projects at Microsoft, we are collectively exploring how AI systems can detect, analyze, and respond in the world to amplify human capabilities."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/exploring-the-structural-changes-driving-protein-function-with-bioemu-1/",
+        "title": "Exploring the structural changes driving protein function with BioEmu-1",
+        "published_date": "February 20, 2025",
+        "authors": [
+            {
+                "name": "Sarah Lewis",
+                "url": "https://www.microsoft.com/en-us/research/people/sarahlewis/",
+                "title": "Senior Research Engineer"
+            },
+            {
+                "name": "Tim Hempel",
+                "url": "https://www.microsoft.com/en-us/research/people/timhempel/",
+                "title": "Senior Research Software Development Engineer"
+            },
+            {
+                "name": "Jose Jimenez-Luna",
+                "url": "https://www.microsoft.com/en-us/research/people/jjimenezluna/",
+                "title": "Senior Researcher"
+            },
+            {
+                "name": "Michael Gastegger",
+                "url": "https://www.microsoft.com/en-us/research/people/mgastegger/",
+                "title": "Senior Researcher"
+            },
+            {
+                "name": "Yu Xie",
+                "url": "https://www.microsoft.com/en-us/research/people/yuxie1/",
+                "title": "Senior Researcher"
+            },
+            {
+                "name": "Victor García Satorras",
+                "url": "https://www.microsoft.com/en-us/research/people/victorgar/",
+                "title": "Senior Researcher"
+            },
+            {
+                "name": "Osama Abdin",
+                "url": "N/A",
+                "title": "Postdoc"
+            },
+            {
+                "name": "Bas Veeling",
+                "url": "https://www.microsoft.com/en-us/research/people/basveeling/",
+                "title": "Senior Research Engineer"
+            },
+            {
+                "name": "Ryota Tomioka",
+                "url": "https://www.microsoft.com/en-us/research/people/ryoto/",
+                "title": "Senior Principal Research Manager"
+            },
+            {
+                "name": "Frank Noé",
+                "url": "https://www.microsoft.com/en-us/research/people/franknoe/",
+                "title": "Partner Research Manager"
+            }
+        ],
+        "section_content": {
+            "Acknowledgements": "BioEmu-1 is the result of highly collaborative team effort at Microsoft Research AI for Science. The full authors: Sarah Lewis, Tim Hempel, José Jiménez-Luna, Michael Gastegger, Yu Xie, Andrew Y. K. Foong, Victor García Satorras, Osama Abdin, Bastiaan S. Veeling, Iryna Zaporozhets, Yaoyi Chen, Soojung Yang, Arne Schneuing, Jigyasa Nigam, Federico Barbero, Vincent Stimper, Andrew Campbell, Jason Yim, Marten Lienen, Yu Shi, Shuxin Zheng, Hannes Schulz, Usman Munir, Ryota Tomioka, Cecilia Clementi, Frank Noé"
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/introducing-muse-our-first-generative-ai-model-designed-for-gameplay-ideation/",
+        "title": "Introducing Muse: Our first generative AI model designed for gameplay ideation",
+        "published_date": "February 19, 2025",
+        "authors": [
+            {
+                "name": "Katja Hofmann",
+                "url": "https://www.microsoft.com/en-us/research/people/kahofman/",
+                "title": "Senior Principal Research Manager and lead of the Microsoft Research Game Intelligence team"
+            }
+        ],
+        "section_content": {
+            "Generated gameplay examples": "As we release our research insights and model today, I keep thinking back to how this all started.  There was a key moment back in December 2022 that I remember clearly. I had recently returned from maternity leave, and while I was away the machine learning world had changed in fundamental ways. ChatGPT had been publicly released, and those who had tried it were in awe of OpenAI’s technical achievements and the model’s capabilities. It was a powerful demonstration of what transformer-based generative models could do when trained on large amounts of (text) data. Coming back from leave at that moment, the key question on my mind was, “What are the implications of this achievement for our team’s work at the intersection of artificial intelligence and video games?”",
+            "What motivated this research?": "As we release our research insights and model today, I keep thinking back to how this all started.  There was a key moment back in December 2022 that I remember clearly. I had recently returned from maternity leave, and while I was away the machine learning world had changed in fundamental ways. ChatGPT had been publicly released, and those who had tried it were in awe of OpenAI’s technical achievements and the model’s capabilities. It was a powerful demonstration of what transformer-based generative models could do when trained on large amounts of (text) data. Coming back from leave at that moment, the key question on my mind was, “What are the implications of this achievement for our team’s work at the intersection of artificial intelligence and video games?”",
+            "A new research opportunity enabled by data": "In our team, we had access to a very different source of data. For years, we had collaborated with Xbox Game Studios’ Ninja Theory (based in Cambridge, UK, just like our research team) to collect gameplay data from Bleeding Edge, their 2020 Xbox game. Bleeding Edge is a 4-versus-4 game where all games are played online, and matches are recorded if the player agrees to the End User License Agreement (EULA). We worked closely with our colleagues at Ninja Theory and with Microsoft compliance teams to ensure that the data was collected ethically and used responsibly for research purposes.",
+            "Scaling up model training": "As the team got to work, some of the key challenges included scaling up the model training. We initially used a V100 cluster, where we were able to prove out how to scale up to training on up to 100 GPUs; that eventually paved the way to training at scale on H100s. Key design decisions we made early focused on how to best leverage insights from the large language model (LLM) community and included choices such as how to effectively represent controller actions and especially images.",
+            "Multidisciplinary collaboration: Involving users from the beginning": "We had started to investigate how to evaluate these types of models early on. For example, we wanted to understand the representations learned using linear probing, which was driven by Research Intern Gunshi Gupta and Senior Research Scientist Sergio Valcarcel Macua; to explore online evaluation, driven by Senior Research Scientist Raluca Georgescu; and to generate both visuals and actions, initially termed “full dreaming” and driven by Research Intern Tarun Gupta. But working through how to systematically evaluate Muse required a much broader set of insights. More importantly, we needed to understand how people might use these models in order to know how to evaluate them.",
+            "Unlocking new creative use cases with the WHAM Demonstrator": "Now, with the model’s emerging capabilities and user insights in mind, it was time to put all the pieces together. The teams joined forces during a Microsoft internal hackathon to explore new interaction paradigms and creative uses that Muse could unlock. As a result, we developed a prototype that we call the WHAM Demonstrator, which allows users to directly interface with the model.",
+            "Identifying key capabilities and how to evaluate them": "The hands-on experience of exploring Muse capabilities with the WHAM Demonstrator, and drawing on insights we gained from the user study, allowed us to systematically identify capabilities that game creatives would require to use generative models like Muse. This in turn allowed us to establish evaluation protocols for three key capabilities: consistency, diversity, and persistency. Consistency refers to a model’s ability to generate gameplay sequences that respect the dynamics of the game. For example, the character moves consistently with controller actions, does not walk through walls, and generally reflects the physics of the underlying game. Diversity refers to a model’s ability to generate a range of gameplay variants given the same initial prompt, covering a wide range of ways in which gameplay could evolve. Finally, persistency refers to a model’s ability to incorporate (or “persist”) user modifications into generated gameplay sequences, such as a character that is copy-pasted into a game visual. We give an overview of these capabilities below.",
+            "Muse evaluation of consistency, diversity and persistency": "With our evaluation framework in place, and access to an H100 compute allocation, the team was able to further improve Muse instances, including higher resolution image encoders (our current models generate visuals at a resolution of 300×180 pixels, up from the 128×128 resolution of our earliest models) and larger models, and expand to all seven Bleeding Edge maps. To show some of the capabilities of the model we are publishing today, we have included videos of 2-minute-long generated gameplay sequences above, which give an impression of the consistency and diversity of gameplay sequences that the model can generate.",
+            "Conclusion": "Today, our team is excited to be publishing our work in Nature and simultaneously releasing Muse open weights, the WHAM Demonstrator, and sample data to the community."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/microsoft-research-and-physics-wallah-team-up-to-enhance-ai-based-tutoring/",
+        "title": "Microsoft Research and Physics Wallah team up to enhance AI-based tutoring",
+        "published_date": "February 12, 2025",
+        "authors": [
+            {
+                "name": "Chris Stetkiewicz",
+                "url": "https://www.linkedin.com/in/chrisstetkiewicz/",
+                "title": "Science Writer"
+            }
+        ],
+        "section_content": {
+            "How does AI Guru work?": "Let’s say a student had a question about Newton’s laws of motion, a core concept in physics. She would type her query into the AI Guru chat window (she could also just talk to it or upload an image from a textbook) and receive a text answer plus images derived from standard textbooks and curated content, typically in just a few seconds. AI Guru also provides a short video where a teacher offers additional context.",
+            "Getting the technology right": "The Alakh AI suite is powered by OpenAI’s foundational models GPT-4 and GPT-4o, integrated with a retrieval-augmented generation (RAG) architecture. It leverages Physics Wallah’s rich repository of high-quality curated content—developed and refined over several years—along with continuous updates from subject matter experts to ensure new materials, textbooks, tutorials, and question banks are seamlessly incorporated. Despite considerable progress, the existing AI sometimes falters when navigating complex academic problems.",
+            "Opening new doors for students": "Getting an education at a top university can be life changing for anyone. For Chandramouleswar Parida, it could change the lives of everyone in his home village in Baniatangi, Khordha, Odisha State, India. Chandra decided to become a doctor after watching his grandfather die from a heart attack. The nearest doctor who could have treated him was at a regional hospital 65 kilometers away.",
+            "Next steps in the collaboration": "The collaboration between Microsoft Research and Physics Wallah aims to apply the advancements in solving math problems across additional subjects, ultimately creating a unified education LLM with enhanced reasoning capabilities and improved accuracy to support student learning."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/exact-improving-ai-agents-decision-making-via-test-time-compute-scaling/",
+        "title": "ExACT: Improving AI agents’ decision-making via test-time compute scaling",
+        "published_date": "February 11, 2025",
+        "authors": [
+            {
+                "name": "Baolin Peng",
+                "url": "https://www.microsoft.com/en-us/research/people/baolinpeng/",
+                "title": "Principal Researcher"
+            },
+            {
+                "name": "Xiao Yu",
+                "url": "https://www.linkedin.com/in/xiao-yu2437/",
+                "title": "Research Intern"
+            },
+            {
+                "name": "Hao Cheng",
+                "url": "https://www.microsoft.com/en-us/research/people/chehao/",
+                "title": "Principal Researcher"
+            },
+            {
+                "name": "Michel Galley",
+                "url": "https://www.microsoft.com/en-us/research/people/mgalley/",
+                "title": "Senior Principal Researcher"
+            },
+            {
+                "name": "Zhou Yu",
+                "url": "https://www.cs.columbia.edu/~zhouyu/",
+                "title": "Associate Professor"
+            },
+            {
+                "name": "Jianfeng Gao",
+                "url": "https://www.microsoft.com/en-us/research/people/jfgao/",
+                "title": "Distinguished Scientist & Vice President"
+            }
+        ],
+        "section_content": {
+            "How Exploratory Learning works": "Exploratory Learning enables agents to dynamically search and adjust their computational resources during testing without depending on MCTS. In contrast to Imitation Learning, which centers on training models using the optimal actions identified through search, Exploratory Learning focuses on cultivating the agent’s ability to navigate its environment by teaching it to evaluate states, explore different pathways, and efficiently backtrack from unpromising paths to identify more favorable alternatives.",
+            "Continued exploration": "Advancing autonomous AI agents is key to enabling them to handle complex, multi-step tasks with greater precision and adaptability. ExACT represents a significant step toward creating agents that can perform complex decision-making before taking action, leading to improved performance, but challenges remain. How can AI agents improve decision-making in real-world scenarios, where they may be constrained by time or resources? How can they learn effectively and efficiently from environmental feedback? We are currently investigating these questions, and we invite you to explore them with us by building on the ExACT framework. Access the ExACT code at our GitHub repository\n(opens in new tab)\n."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/advances-to-low-bit-quantization-enable-llms-on-edge-devices/",
+        "title": "Advances to low-bit quantization enable LLMs on edge devices",
+        "published_date": "February 5, 2025",
+        "authors": [
+            {
+                "name": "Shijie Cao",
+                "url": "https://www.microsoft.com/en-us/research/people/shijiecao/",
+                "title": "Senior Researcher"
+            },
+            {
+                "name": "Lingxiao Ma",
+                "url": "N/A",
+                "title": "Senior Researcher"
+            },
+            {
+                "name": "Ting Cao",
+                "url": "https://www.microsoft.com/en-us/research/people/ticao/",
+                "title": "Principal Research Manager"
+            }
+        ],
+        "section_content": {
+            "Ladder: Bridging the gap between custom data and hardware limits": "Cutting-edge hardware accelerators, such as GPUs, TPUs, and specialized chips, are designed to speed up computationally intensive tasks like deep learning by efficiently handling large-scale operations. These accelerators now integrate lower-bit computing units, such as FP32, FP16, and even FP8, into their architectures.",
+            "T-MAC: Table-lookup for mpGEMM without multiplication": "Deploying low-bit quantized LLMs on edge devices often requires dequantizing models to ensure hardware compatibility. However, this approach has two major drawbacks:",
+            "LUT Tensor Core: Driving hardware for mpGEMM": "While T-MAC and Ladder optimize mpGEMM on existing CPU and GPU architectures, improving computational efficiency, they cannot match the performance of dedicated hardware accelerators with built-in LUT support. Achieving significant improvements in performance, power, and area (PPA) requires overcoming four key challenges:",
+            "Unlocking new possibilities for embodied AI": "Low-bit quantization improves the efficiency of running large models on edge devices while also enabling model scaling by reducing the bits used to represent each parameter. This scaling enhances model capabilities, generality, and expressiveness, as shown by the BitNet model, which starts with a low-bit configuration and expands."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/research-focus-week-of-january-27-2025/",
+        "title": "Research Focus: Week of January 27, 2025",
+        "published_date": "January 31, 2025",
+        "authors": [],
+        "section_content": {
+            "NEW RESEARCH": "Symbolic automata are finite state automata that support potentially infinite alphabets, such as the set of rational numbers, generally applied to regular expressions and languages over finite words. In symbolic automata (or automata modulo A), an alphabet is represented by an effective Boolean algebra A, supported by a decision procedure for satisfiability. Regular languages over infinite words (so called 𝜔-regular languages) have a rich history paralleling that of regular languages over finite words, with well-known applications to model checking via Büchi automata and temporal logics.",
+            "EVENT": "LLMs have shown increasing task-solving abilities not present in smaller models. Using LLMs for automated evaluation (LLM4Eval) is a promising technique in the areas of automated judgments, natural language generation, and retrieval augmented generation (RAG) systems."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/research-focus-week-of-january-13-2025/",
+        "title": "Research Focus: Week of January 13, 2025",
+        "published_date": "January 17, 2025",
+        "authors": [],
+        "section_content": {
+            "NEW RESEARCH": "Research and development (R&D) plays a pivotal role in boosting industrial productivity. However, the rapid advance of AI has exposed the limitations of traditional R&D automation. Current methods often lack the intelligence needed to support innovative research and complex development tasks, underperforming human experts with deep knowledge."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/mattergen-a-new-paradigm-of-materials-design-with-generative-ai/",
+        "title": "MatterGen: A new paradigm of materials design with generative AI",
+        "published_date": "January 16, 2025",
+        "authors": [
+            {
+                "name": "Claudio Zeni",
+                "url": "https://www.microsoft.com/en-us/research/people/claudiozeni/",
+                "title": "Senior Researcher"
+            },
+            {
+                "name": "Robert Pinsler",
+                "url": "https://www.microsoft.com/en-us/research/people/rpinsler/",
+                "title": "Senior Researcher"
+            },
+            {
+                "name": "Daniel Zügner",
+                "url": "https://www.microsoft.com/en-us/research/people/dzuegner/",
+                "title": "Senior Researcher"
+            },
+            {
+                "name": "Andrew Fowler",
+                "url": "https://www.microsoft.com/en-us/research/people/fowlerandrew/",
+                "title": "Senior Researcher"
+            },
+            {
+                "name": "Matthew Horton",
+                "url": "N/A",
+                "title": "Senior Research SDE"
+            },
+            {
+                "name": "Ryota Tomioka",
+                "url": "https://www.microsoft.com/en-us/research/people/ryoto/",
+                "title": "Senior Principal Research Manager"
+            },
+            {
+                "name": "Tian Xie",
+                "url": "https://www.microsoft.com/en-us/research/people/tianxie/",
+                "title": "Principal Research Manager"
+            }
+        ],
+        "section_content": {
+            "A novel diffusion architecture": "MatterGen is a diffusion model that operates on the 3D geometry of materials. Much like an image diffusion model generates pictures from a text prompt by modifying the color of pixels from a noisy image, MatterGen generates proposed structures by adjusting the positions, elements, and periodic lattice from a random structure. The diffusion architecture is specifically designed for materials to handle specialties like periodicity and 3D geometry.",
+            "Outperforming screening": "The key advantage of MatterGen over screening is its ability to access the full space of unknown materials. In Figure 4, we show that MatterGen continues to generate more novel candidate materials with high bulk modulus above 400 GPa, for example, which are hard to compress. In contrast, screening baseline saturates due to exhausting known candidates.",
+            "Handling compositional disorder": "Compositional disorder (Figure 5) is a commonly observed phenomenon where different atoms can randomly swap their crystallographic sites in a synthesized material. Recently\n(opens in new tab)\n, the community has been exploring what it means for a material to be novel in the context of computationally designed materials, as widely employed algorithms will not distinguish between pairs of structures where the only difference is a permutation of similar elements in their respective sites.",
+            "Experimental lab verification": "In addition to our extensive computational evaluation, we have validated MatterGen’s capabilities through experimental synthesis. In collaboration with the team led by Prof Li Wenjie from the Shenzhen Institutes of Advanced Technology\n(opens in new tab)\n (SIAT) of the Chinese Academy of Sciences, we have synthesized a novel material, TaCr2O6, whose structure was generated by MatterGen after conditioning the model on a bulk modulus value of 200 GPa. The synthesized material’s structure aligns with the one proposed by MatterGen, with the caveat of compositional disorder between Ta and Cr. Additionally, we experimentally measure a bulk modulus of 169 GPa against the 200 GPa given as design specification, with a relative error below 20%, very close from an experimental perspective. If similar results can be translated to other domains, it will have a profound impact on the design of batteries, fuel cells, and more.",
+            "AI emulator and generator flywheel": "MatterGen presents a new opportunity for AI accelerated materials design, complementing our AI emulator MatterSim. MatterSim follows the fifth paradigm of scientific discovery, significantly accelerating the speed of material properties’ simulations. MatterGen in turn accelerates the speed of exploring new material candidates with property guided generation. MatterGen and MatterSim can work together as a flywheel to speed up both the simulation and exploration of novel materials.",
+            "Making MatterGen available": "We believe the best way to make an impact in materials design is to make our model available to the public. We release the source code of MatterGen\n(opens in new tab)\n under the MIT license, together with the training and fine-tuning data. We welcome the community to use and build on top of our model.",
+            "Looking ahead": "MatterGen represents a new paradigm of materials design enabled by generative AI technology. It explores a significantly larger space of materials than screening-based methods. It is also more efficient by guiding materials exploration with prompts. Similar to how generative AI has impacted drug discovery\n(opens in new tab)\n, it will have profound impact on how we design materials in broad domains including batteries, magnets, and fuel cells.",
+            "Acknowledgement": "This work is the result of highly collaborative team efforts at Microsoft Research AI for Science. The full authors include: Claudio Zeni, Robert Pinsler, Daniel Zügner, Andrew Fowler, Matthew Horton, Xiang Fu, Zilong Wang, Aliaksandra Shysheya, Jonathan Crabbé, Shoko Ueda, Roberto Sordillo, Lixin Sun, Jake Smith, Bichlien Nguyen, Hannes Schulz, Sarah Lewis, Chin-Wei Huang, Ziheng Lu, Yichi Zhou, Han Yang, Hongxia Hao, Jielan Li, Chunlei Yang, Wenjie Li, Ryota Tomioka, Tian Xie."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/autogen-v0-4-reimagining-the-foundation-of-agentic-ai-for-scale-extensibility-and-robustness/",
+        "title": "AutoGen v0.4: Reimagining the foundation of agentic AI for scale, extensibility, and robustness",
+        "published_date": "January 14, 2025",
+        "authors": [
+            {
+                "name": "Adam Fourney",
+                "url": "https://www.microsoft.com/en-us/research/people/adamfo/",
+                "title": "Senior Principal Researcher"
+            },
+            {
+                "name": "Ahmed Awadallah",
+                "url": "https://www.microsoft.com/en-us/research/people/hassanam/",
+                "title": "Partner Research Manager"
+            },
+            {
+                "name": "Cheng Tan",
+                "url": "https://www.microsoft.com/en-us/research/people/chetan/",
+                "title": "Principal Software Development Engineer"
+            },
+            {
+                "name": "Erkang (Eric) Zhu",
+                "url": "https://www.microsoft.com/en-us/research/people/ekzhu/",
+                "title": "Principal Researcher"
+            },
+            {
+                "name": "Friederike Niedtner",
+                "url": "https://www.microsoft.com/en-us/research/people/fniedtner/",
+                "title": "Principal Technical Research Program Manager"
+            },
+            {
+                "name": "Gagan Bansal",
+                "url": "https://www.microsoft.com/en-us/research/people/gaganbansal/",
+                "title": "Senior Researcher"
+            },
+            {
+                "name": "Jack Gerrits",
+                "url": "https://www.microsoft.com/en-us/research/people/jagerrit/",
+                "title": "Principal Software Development Engineer"
+            },
+            {
+                "name": "Jacob Alber",
+                "url": "https://www.microsoft.com/en-us/research/people/jaalber/",
+                "title": "Principal Software Engineer"
+            },
+            {
+                "name": "Peter Chang",
+                "url": "https://www.microsoft.com/en-us/research/people/petchang/",
+                "title": "Senior Software Development Engineer"
+            },
+            {
+                "name": "Rafah Hosn",
+                "url": "https://www.microsoft.com/en-us/research/people/raaboulh/",
+                "title": "Partner, Group Program Manager"
+            },
+            {
+                "name": "Ricky Loynd",
+                "url": "https://www.microsoft.com/en-us/research/people/riloynd/",
+                "title": "Senior Research Software Engineer"
+            },
+            {
+                "name": "Saleema Amershi",
+                "url": "https://www.microsoft.com/en-us/research/people/samershi/",
+                "title": "Partner Research Manager"
+            },
+            {
+                "name": "Victor Dibia",
+                "url": "https://www.microsoft.com/en-us/research/people/victordibia/",
+                "title": "Principal Research Software Engineer"
+            },
+            {
+                "name": "XiaoYun Zhang",
+                "url": "https://littlelittlecloud.github.io/",
+                "title": "Senior Software Engineer"
+            },
+            {
+                "name": "Li Jiang",
+                "url": "https://thinkall.github.io/",
+                "title": "Senior Software Engineer"
+            },
+            {
+                "name": "Ryan Sweet",
+                "url": "N/A",
+                "title": "Principal Applied Scientist"
+            },
+            {
+                "name": "Leonardo Pinheiro",
+                "url": "https://github.com/lspinheiro",
+                "title": "Senior Machine Learning Engineer"
+            },
+            {
+                "name": "Mohammad Mazraeh",
+                "url": "https://www.linkedin.com/in/mohmaz/",
+                "title": "Senior Software Engineer"
+            },
+            {
+                "name": "Gerardo Moreno Zizumbo",
+                "url": "N/A",
+                "title": "Software Engineer"
+            },
+            {
+                "name": "Kosta Petan",
+                "url": "https://www.linkedin.com/in/kostapetan/",
+                "title": "Senior Specialist GBB"
+            },
+            {
+                "name": "Aamir Jawaid",
+                "url": "https://www.linkedin.com/in/aamirjawaid/",
+                "title": "Senior Software Engineer"
+            },
+            {
+                "name": "Reuben Bond",
+                "url": "https://www.linkedin.com/in/reubenbond/",
+                "title": "Principal Software Development Engineer"
+            },
+            {
+                "name": "Diego Colombo",
+                "url": "https://www.linkedin.com/in/colombod/",
+                "title": "Principal Software Engineer"
+            },
+            {
+                "name": "Hussein Mozannar",
+                "url": "N/A",
+                "title": "Senior Researcher"
+            }
+        ],
+        "section_content": {
+            "New AutoGen framework": "As shown in Figure 1, the AutoGen framework features a layered architecture with clearly defined responsibilities across the framework, developer tools, and applications. The framework comprises three layers: core, agent chat, and first-party extensions.",
+            "Developer tools": "In addition to the framework, AutoGen 0.4 includes upgraded programming tools and applications, designed to support developers in building and experimenting with AutoGen.",
+            "Migrating to AutoGen v0.4": "We implemented several measures to facilitate a smooth upgrade from the previous v0.2 API, addressing core differences in the underlying architecture.",
+            "Looking forward": "This new release sets the stage for a robust ecosystem and strong foundation to drive advances in agentic AI application and research. Our roadmap includes releasing .NET support, introducing built-in, well-designed applications and extensions for challenging domains, and fostering a community-driven ecosystem. We remain committed to the responsible development of AutoGen and its evolving capabilities.",
+            "Acknowledgments": "We would like to thank the many individuals whose ideas and insights helped formalize the concepts introduced in this release, including Rajan Chari, Ece Kamar, John Langford, Ching-An Chen, Bob West, Paul Minero, Safoora Yousefi, Will Epperson, Grace Proebsting, Enhao Zhang, and Andrew Ng."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/aiopslab-building-ai-agents-for-autonomous-clouds/",
+        "title": "AIOpsLab: Building AI agents for autonomous clouds",
+        "published_date": "December 20, 2024",
+        "authors": [
+            {
+                "name": "Minghua Ma",
+                "url": "https://www.microsoft.com/en-us/research/people/minghuama/",
+                "title": "Senior Researcher"
+            },
+            {
+                "name": "Gagan Somashekar",
+                "url": "https://www.microsoft.com/en-us/research/people/gsomashekar/",
+                "title": "Senior Researcher"
+            },
+            {
+                "name": "Rujia Wang",
+                "url": "https://www.microsoft.com/en-us/research/people/rujiawang/",
+                "title": "Principal Research Product Manager"
+            },
+            {
+                "name": "Chetan Bansal",
+                "url": "https://www.microsoft.com/en-us/research/people/chetanb/",
+                "title": "Senior Principal Research Manager"
+            },
+            {
+                "name": "Saravan Rajmohan",
+                "url": "https://www.microsoft.com/en-us/research/people/saravar/",
+                "title": "Partner Director & GM, AI and Applied Research"
+            }
+        ],
+        "section_content": {
+            "Agent-cloud interface (ACI)": "AIOpsLab strictly separates the agent and the application service using an intermediate orchestrator. It provides several interfaces for other system parts to integrate and extend. First, it establishes a session with an agent to share information about benchmark problems: (1) the problem description, (2) instructions (e.g., response format), and (3) available APIs to call as actions.",
+            "Service": "AIOpsLab abstracts a diverse set of services to reflect the variance in production environments. This includes live, running services that are implemented using various architectural principles, including microservices, serverless, and monolithic.",
+            "Workload generator": "The workload generator in AIOpsLab plays a crucial role by creating simulations of both faulty and normal scenarios. It receives specifications from the orchestrator, such as the task, desired effects, scale, and duration. The generator can use a model trained on real production traces to generate workloads that align with these specifications. Faulty scenarios may simulate conditions like resource exhaustion, exploit edge cases, or trigger cascading failures, inspired by real incidents. Normal scenarios mimic typical production patterns, such as daily activity cycles and multi-user interactions. When various characteristics (e.g., service calls, user distribution, arrival times) can lead to the desired effect, multiple workloads can be stored in the problem cache for use by the orchestrator. In coordination with the fault generator, the workload generator can also create complex fault scenarios with workloads.",
+            "Fault generator": "AIOpsLab has a novel push-button fault generator designed for generic applicability across various cloud scenarios. Our approach integrates application and domain knowledge to create adaptable policies and “oracles” compatible with AIOps scenarios. This includes fine-grained fault injection capable of simulating complex failures inspired by production incidents. Additionally, it can inject faults at various system levels, exposing root causes while maintaining semantic integrity and considering interdependencies between cloud microservices. The fault injector’s versatility can enhance the reliability and robustness of cloud systems by enabling thorough testing and evaluation of AIOps capabilities.",
+            "Observability": "AIOpsLab is equipped with an extensible observability layer designed to provide comprehensive monitoring capabilities across various system layers for any AIOps tool. AIOpsLab collects a wide array of telemetry data, including (1) traces from Jaeger detailing the end-to-end paths of requests through distributed systems, (2) application logs formatted and recorded by Filebeat and Logstash, and (3) system metrics monitored by Prometheus. Additionally, AIOpsLab also captures lower-level system information such as syscall logs and cluster information. As mentioned, we handle potential data overload through flexible APIs to tune the telemetry data relevant to the AIOps tools.",
+            "Next steps": "This research project adopts Microsoft security standards and Responsible AI principles, and we envision this research evolving into a vital resource for organizations aiming to optimize their IT operations. Additionally, we plan to collaborate with various generative AI teams to incorporate AIOpsLab as a benchmark scenario for evaluating state-of-the-art models. By doing so, we aim to foster innovation and encourage the development of more advanced AIOps solutions. This research is essential not only for IT professionals but also for anyone invested in the future of technology, as it has the potential to redefine how organizations manage operations, respond to incidents, and ultimately serve their customers in an increasingly automated world.",
+            "Acknowledgements": "We would like to thank Yinfang Chen, Manish Shetty, Yogesh Simmhan, Xuchao Zhang, Jonathan Mace, Dax Vandevoorde, Pedro Las-Casas, Shachee Mishra Gupta, and Suman Nath, for contributing to this project."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/research-focus-week-of-december-16-2024/",
+        "title": "Research Focus: Week of December 16, 2024",
+        "published_date": "December 18, 2024",
+        "authors": [],
+        "section_content": {
+            "NEW RESEARCH": "Although large language models (LLMs) excel at language-focused tasks like news writing, document summarization, customer service, and supporting virtual assistants, they can face challenges when it comes to learning and inference on numeric and structured industry data, such as tabular and time series data. To address these issues, researchers from Microsoft propose a new approach to building industrial foundation models (IFMs). As outlined in a recent blog post, they have successfully demonstrated the feasibility of cross-domain universal in-context learning on tabular data and the significant potential it could achieve.",
+            "NeoMem: Hardware/Software Co-Design for CXL-Native Memory Tiering": "The Compute Express Link (CXL) open standard interconnect enables integration of diverse types of memory into servers via its byte-addressable SerDes links. To fully utilize CXL-based heterogeneous memory systems (which combine different types of memory with varying access speeds), it’s necessary to implement efficient memory tiering—a strategy to manage data placement across memory tiers for optimal performance. Efficiently managing these memory systems is crucial, but has been challenging due to the lack of precise and efficient tools for understanding how memory is accessed.",
+            "Chimera: Accurate retrosynthesis prediction by ensembling models with diverse inductive biases": "Planning and conducting chemical syntheses is a significant challenge in the discovery of functional small molecules, which limits the potential of generative AI for molecular inverse design. Although early machine learning-based retrosynthesis models have shown the ability to predict reasonable routes, they are less accurate for infrequent, yet important reactions.",
+            "The GA4GH Task Execution API: Enabling Easy Multicloud Task Execution": "In bioinformatics and computational biology, data analysis often involves chaining command-line programs developed by specialized teams at different institutions. These tools, which vary widely in age, software stacks, and dependencies, lack a common programming interface, which makes integration, workflow management and reproducibility challenging.",
+            "RedCode: Risky Code Execution and Generation Benchmark for Code Agents": "Increasing use of code agents for AI-assisted coding and software development has brought safety and security concerns, such as generating or executing malicious code, which have become significant barriers to real-world deployment of these agents.",
+            "Towards industrial foundation models: Integrating large language models with industrial data intelligence": "Although large language models (LLMs) excel at language-focused tasks like news writing, document summarization, customer service, and supporting virtual assistants, they can face challenges when it comes to learning and inference on numeric and structured industry data, such as tabular and time series data. To address these issues, researchers from Microsoft propose a new approach to building industrial foundation models (IFMs). As outlined in a recent blog post, they have successfully demonstrated the feasibility of cross-domain universal in-context learning on tabular data and the significant potential it could achieve."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/promptwizard-the-future-of-prompt-optimization-through-feedback-driven-self-evolving-prompts/",
+        "title": "PromptWizard: The future of prompt optimization through feedback-driven self-evolving prompts",
+        "published_date": "December 17, 2024",
+        "authors": [
+            {
+                "name": "Akshay Nambi",
+                "url": "https://www.microsoft.com/en-us/research/people/akshayn/",
+                "title": "Principal Researcher"
+            },
+            {
+                "name": "Tanuja Ganu",
+                "url": "https://www.microsoft.com/en-us/research/people/taganu/",
+                "title": "Director of Research Engineering"
+            }
+        ],
+        "section_content": {
+            "The challenge of effective prompting": "AI is reshaping industries—from education to healthcare—thanks to advancements in large language models (LLMs). These models rely on prompts, carefully crafted inputs that guide them to produce relevant and meaningful outputs. While the impact of prompts is profound, creating prompts that can help with complex tasks is a time-intensive and expertise-heavy process, often involving months of trial and error.",
+            "Introducing PromptWizard": "PromptWizard (PW) is designed to automate and simplify prompt optimization. It combines iterative feedback from LLMs with efficient exploration and refinement techniques to create highly effective prompts within minutes.",
+            "How PromptWizard works": "PromptWizard begins with a user input: a problem description, an initial prompt instruction, and a few training examples that serve as a foundation for the task at hand.",
+            "Results": "PromptWizard stands out for its feedback-driven refinement and systematic exploration, delivering exceptional results across a wide variety of tasks while maintaining computational efficiency."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/moving-to-graphrag-1-0-streamlining-ergonomics-for-developers-and-users/",
+        "title": "Moving to GraphRAG 1.0 – Streamlining ergonomics for developers and users",
+        "published_date": "December 16, 2024",
+        "authors": [
+            {
+                "name": "Nathan Evans",
+                "url": "https://www.microsoft.com/en-us/research/people/naevans/",
+                "title": "Principal Software Architect"
+            },
+            {
+                "name": "Alonso Guevara Fernández",
+                "url": "https://www.microsoft.com/en-us/research/people/alonsog/",
+                "title": "Senior Software Engineer"
+            },
+            {
+                "name": "Joshua Bradley",
+                "url": "https://www.microsoft.com/en-us/research/people/joshbradley/",
+                "title": "Senior Data Scientist"
+            }
+        ],
+        "section_content": {
+            "Introducing GraphRAG 1.0": "Microsoft debuted\n(opens in new tab)\n the pre-release version of GraphRAG\n(opens in new tab)\n in July 2024 to advance AI use in complex domains. Since that time, we’ve seen incredible adoption and community engagement (over 20k stars and 2k forks on GitHub as of this writing), with numerous fixes and improvements by the core team and community contributors. We’re deeply grateful for the contributions and feedback we’ve received and are excited to share a number of major ergonomic and structural improvements that culminate in the official release of GraphRAG 1.0.",
+            "Ergonomic refactors": "When we first launched GraphRAG, most config was done using environment variables, which could be daunting, given the many options available. We’ve reduced the friction on setup by adding an init command\n(opens in new tab)\n that generates a simplified starter settings.yml file with all core required config already set. We recommend developers start here to ensure they get the clearest initial config. With this update, a minimal starting config does not require the user to have expertise with GraphRAG for a quick setup, only an OpenAI API key in their environment.",
+            "Availability": "GraphRAG version 1.0 is now available on GitHub\n(opens in new tab)\n, and published to PyPI\n(opens in new tab)\n. Check out the Getting Started\n(opens in new tab)\n guide to use GraphRAG 1.0 today. today."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/research-focus-week-of-december-2-2024/",
+        "title": "Research Focus: Week of December 2, 2024",
+        "published_date": "December 4, 2024",
+        "authors": [],
+        "section_content": {
+            "NEW RESEARCH": "Foundation models, which are large-scale models pre-trained on extensive datasets and subsequently adapted for specific downstream tasks, have become integral to contemporary machine learning frameworks. Fine-tuning these models is essential, yet full parameter fine-tuning often encounters significant memory and computational bottlenecks. Parameter-efficient finetuning (PEFT) techniques aim to minimize the number of trainable parameters to reduce training costs and improve training stability. Among these techniques, Low-Rank Adaptation (LoRA) is highly efficient, although it has limitations in terms of expressiveness and generalization have been noted.",
+            "Adaptive Security, Erasures, and Network Assumptions in Communication-Local MPC": "n-party Multi-Party Computation (MPC) is a cryptographic protocol technique that allows separate parties to securely compute a function on their joint data while keeping their inputs private. To build such a protocol, most works require all pairs of participating parties to be able to securely and reliably communicate with each other. Recently, the problem of Communication-Local (CL) MPC has been explored where this assumption is modelled more realistically – e.g. by only requiring that participating parties can securely and reliably communicate with a few other participating parties (as for example in networks like blockchains). However, few solutions exist that guarantee adaptive security—resilience to dynamic corruption of parties—and most rely on strong assumptions about party actions.",
+            "Cuttlefish: A Fair, Predictable Execution Environment for Cloud-hosted Financial Exchanges": "Low-latency algorithmic trading is driving efficiency in modern financial markets by promoting accurate/timely pricing of securities, higher liquidity, and lower trade costs for investors. The goal is to process incoming market data and issue trades as quickly as possible to take advantage of ephemeral market-making and arbitrage opportunities. Interest in cloud-hosted financial exchanges is growing, as they promise a cost-effective platform more accessible to market participants, among other benefits.",
+            "LLM2CLIP: Powerful language model unlocks richer visual representation": "CLIP is a prominent multimodal foundational model, aligning visual and textual signals into a shared feature space. It supports various tasks, including zero-shot classification, detection, segmentation, and cross-modal retrieval, significantly influencing the entire multimodal domain. As a feature extractor, it has become dominant in cross-modal representation tasks such as image understanding, video understanding, and text-to-image/video generation. However, rapid advancements in large language models (LLMs) are continually pushing the boundaries of language comprehension and generation. Can the capabilities of LLMs be harnessed to further improve multimodal representation learning?",
+            "LORASC: Expressive and Generalizable Low-rank Adaptation for Large Models via Slow Cascaded Learning": "Foundation models, which are large-scale models pre-trained on extensive datasets and subsequently adapted for specific downstream tasks, have become integral to contemporary machine learning frameworks. Fine-tuning these models is essential, yet full parameter fine-tuning often encounters significant memory and computational bottlenecks. Parameter-efficient finetuning (PEFT) techniques aim to minimize the number of trainable parameters to reduce training costs and improve training stability. Among these techniques, Low-Rank Adaptation (LoRA) is highly efficient, although it has limitations in terms of expressiveness and generalization have been noted."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/mars-a-unified-financial-market-simulation-engine-in-the-era-of-generative-foundation-models/",
+        "title": "MarS: A unified financial market simulation engine in the era of generative foundation models",
+        "published_date": "December 4, 2024",
+        "authors": [
+            {
+                "name": "Weiqing Liu",
+                "url": "https://www.microsoft.com/en-us/research/people/weiqiliu/",
+                "title": "Principal Research Manager"
+            },
+            {
+                "name": "Junjie Li",
+                "url": "https://www.microsoft.com/en-us/research/people/junli/",
+                "title": "Principal Applied Scientist"
+            },
+            {
+                "name": "Yang Liu",
+                "url": "N/A",
+                "title": "Applied Scientist II"
+            },
+            {
+                "name": "Chang Xu",
+                "url": "https://www.microsoft.com/en-us/research/people/chanx/",
+                "title": "Senior Researcher"
+            },
+            {
+                "name": "Shikai Fang",
+                "url": "N/A",
+                "title": "Senior Researcher"
+            },
+            {
+                "name": "Lewen Wang",
+                "url": "N/A",
+                "title": "Researcher"
+            },
+            {
+                "name": "Jiang Bian",
+                "url": "https://www.microsoft.com/en-us/research/people/jiabia/",
+                "title": "Partner Research Manager"
+            }
+        ],
+        "section_content": {
+            "Introduction": "Generative foundation models have transformed various domains, creating new paradigms for content generation. Integrating these models with domain-specific data enables industry-specific applications. Microsoft Research has used this approach to develop the large market model (LMM) and the Financial Market Simulation Engine (MarS) for the financial domain. These innovations have the potential to empower financial researchers to customize generative models for diverse scenarios, establishing a new paradigm for applying generative models to downstream tasks in financial markets. This integration may provide enhanced efficiency, more accurate insights, and significant advancements in the financial domain.",
+            "MarS based on LMM": "Generative models, once trained, can be easily adapted for a range of downstream tasks, often outperforming traditional models tailored for specific scenarios. Building on the development of LMM, researchers further analyzed the needs of various financial scenarios and designed MarS as a versatile financial market simulation engine. MarS not only serves as a general-purpose simulation tool but also introduces a novel framework for applying generative models across diverse financial tasks, from market prediction and risk assessment to trading strategy optimization."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/advances-in-run-time-strategies-for-next-generation-foundation-models/",
+        "title": "Advances in run-time strategies for next-generation foundation models",
+        "published_date": "November 27, 2024",
+        "authors": [
+            {
+                "name": "Eric Horvitz",
+                "url": "https://www.microsoft.com/en-us/research/people/horvitz/",
+                "title": "Chief Scientific Officer"
+            },
+            {
+                "name": "Harsha Nori",
+                "url": "https://www.microsoft.com/en-us/research/people/hanori/",
+                "title": "Director, Research Engineering"
+            },
+            {
+                "name": "Naoto Usuyama",
+                "url": "https://www.microsoft.com/en-us/research/people/naotous/",
+                "title": "Principal Researcher"
+            }
+        ],
+        "section_content": {
+            "Is o1-preview “just” fancy prompting?": "The introduction of the OpenAI o1 model series marks a significant shift from prior GPT models. Unlike GPT, o1 models are trained using reinforcement learning (RL) techniques that enable them to “think” before generating outputs. While Medprompt relies on a cascade of operations with GPT-4 at run time guided by a multistage prompt, the o1 series incorporates this run-time reasoning directly into its RL-based design. The built-in functionality enables the o1 models to significantly outperform even the best results using GPT-4 and Medprompt. The performance gains come with a notable tradeoff: its per-token cost was approximately six times that of GPT-4o at the time of our evaluation. While the results for GPT-4o with Medprompt fall short of o1-preview model performance, the combination offers a more cost-effective alternative. The cost-benefit tradeoffs are highlighted in the following figure, with the x-axis presented on a logarithmic scale.",
+            "Can we prompt engineer o1-preview?": "The o1-preview model exhibits distinct run-time behaviors compared to the GPT series. While some of our more dynamic prompting strategies performed better than expected with o1-preview models, our most tried-and-true strategy was anything but consistent throughout our evaluation. Figure 4 captures specific performance results for Tailored Prompt, Ensembling, and Few-Shot Prompting on o1-preview. Here’s a summary of our findings:",
+            "Do results stand in another language?": "We expanded our research to include a new multilingual benchmark based on the Japanese national medical licensing exam. The JMLE (Japanese Medical Licensing Examination) is written in Japanese and administered in February 2024, after the o1-preview model’s knowledge cutoff. Even without translation to English, the o1-preview model achieved a remarkable score of 98.2% accuracy (Figure 5), well above the exam’s minimum passing score of approximately 80%.",
+            "Do reasoning tokens improve performance?": "For fun, we conducted tests to determine whether increasing the number of reasoning tokens could improve performance. Our findings showed that by adjusting the prompt, we were able to consistently increase the number of reasoning tokens used by o1-preview, and the increase was directly correlated with improved performance as demonstrated in Figure 6.",
+            "What’s the takeaway?": "Bottom line: There’s a little something for everyone when it comes to run-time strategies. We’re excited by the performance gains from GPT models to o1-preview models. While these improvements are significant, so is the cost. For those needing proven accuracy on a budget, Medprompt leveraging calls to GPT-4 is a viable option for medicine and beyond. We summarize the relative performance of prompting strategies in Figure 7 to determine the best option, or check out the paper for a detailed breakdown of every dataset, experimental configuration, and prompt template\n(opens in new tab)\n.",
+            "Anything more to consider?": "We highlighted several considerations in the paper that are worth checking out. Here are three opportunities that are top of mind:",
+            "Resources": ""
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/accelerating-drug-discovery-with-tamgen-a-generative-ai-approach-to-target-aware-molecule-generation/",
+        "title": "Accelerating drug discovery with TamGen: A generative AI approach to target-aware molecule generation",
+        "published_date": "November 25, 2024",
+        "authors": [
+            {
+                "name": "Yingce Xia",
+                "url": "https://www.microsoft.com/en-us/research/people/yinxia/",
+                "title": "Principal Researcher"
+            },
+            {
+                "name": "Pan Deng",
+                "url": "N/A",
+                "title": "Senior Researcher"
+            },
+            {
+                "name": "Shufang Xie",
+                "url": "https://www.microsoft.com/en-us/research/people/shufxi/",
+                "title": "Senior Research SDE"
+            },
+            {
+                "name": "Haiguang Liu",
+                "url": "N/A",
+                "title": "Principal Research Manager"
+            },
+            {
+                "name": "Tao Qin",
+                "url": "https://www.microsoft.com/en-us/research/people/taoqin/",
+                "title": "Partner Research Manager"
+            }
+        ],
+        "section_content": {
+            "Generative AI helps overcome limitations in drug discovery": "Generative AI is opening new avenues for scientific exploration by allowing computers to autonomously learn and produce original content. TamGen offers a new approach to drug discovery by applying the principles of generative AI to molecular design. Unlike traditional methods, which depend on systematically screening known compounds—a process that is long, complex, and costly due to its reliance on empirical knowledge and the time-consuming task of exploring a vast chemical library—generative AI provides opportunities for designing entirely new chemical structures.",
+            "TamGen workflow": "TamGen’s workflow uses generative AI to design target-specific chemical compounds. Building on the success of large language models (LLMs), we adapted a similar approach for molecular generation, using a training method like that of GPT models, which involves next-token prediction. Molecules were first converted into a simplified molecular input line entry system (SMILES)—a notation representing molecular structures as symbol sequences, similar to text. We then developed a protein encoder to process information about proteins, including their 3D structure.",
+            "Evaluating TamGen computationally": "To evaluate TamGen’s performance, we compared it to five other common methods used to create 3D shapes of molecules intended to bind to certain proteins. We evaluated these methods using the CrossDocked benchmark, a dataset used in AI research to assess the quality of molecule generation conditioned on a target protein.",
+            "Experimental lab verification": "To ensure real-world applicability, we also validated our findings in a hands-on lab environment. Here, we focused on the ClpP protease in Mycobacterium tuberculosis as the target because it plays a significant role in the bacterium’s survival under stress conditions. We proposed the Design-Refine-Test pipeline to effectively identify molecular compounds for TB drug discovery.",
+            "From molecule to fragment generation": "In addition to generating new molecules, TamGen can optimize existing ones by designing smaller molecular fragments. In this fragment generation process, TamGen builds on a given protein target and a molecular core structure to design new compounds around that core. By incorporating information about the target protein, it generates fragments that are highly specific to the target. This approach moves beyond traditional methods that rely on pre-existing databases, which often limit both novelty and effectiveness of molecular fragments.",
+            "AI’s potential in drug discovery": "TamGen showcases the transformative potential of generative AI in drug design, combining advanced molecular modeling with researcher-AI collaboration. Tasks that once took years can now be accomplished in a fraction of the time. This research underscores AI’s expanding role in drug discovery and its promise for developing effective treatments against persistent infectious diseases like TB."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/lazygraphrag-setting-a-new-standard-for-quality-and-cost/",
+        "title": "LazyGraphRAG: Setting a new standard for quality and cost",
+        "published_date": "November 25, 2024",
+        "authors": [
+            {
+                "name": "Darren Edge",
+                "url": "https://www.microsoft.com/en-us/research/people/daedge/",
+                "title": "Senior Director"
+            },
+            {
+                "name": "Ha Trinh",
+                "url": "https://www.microsoft.com/en-us/research/people/trinhha/",
+                "title": "Senior Data Scientist"
+            },
+            {
+                "name": "Jonathan Larson",
+                "url": "https://www.microsoft.com/en-us/research/people/jolarso/",
+                "title": "Partner Data Architect"
+            }
+        ],
+        "section_content": {
+            "Affordable GraphRAG for every use case": "The GraphRAG project\n(opens in new tab)\n aims to expand the class of questions that AI systems can answer over private datasets by leveraging the implicit relationships within unstructured text.",
+            "Blending vector RAG and Graph RAG with deferred LLM use": "LazyGraphRAG aims to blend the advantages of vector RAG and Graph RAG while overcoming their respective limitations:",
+            "LazyGraphRAG answer quality is state-of-the-art": "We compared LazyGraphRAG at varying levels of relevance test budget to a range of competing methods, as follows:",
+            "Looking forward": "LazyGraphRAG shows that it is possible for a single, flexible query mechanism to substantially outperform a diverse range of specialized query mechanisms across the local-global query spectrum, and to do so without the up-front costs of LLM data summarization. Its very fast and almost-free indexing make LazyGraphRAG ideal for one-off queries, exploratory analysis, and streaming data use cases, while its ability to smoothly increase answer quality with increasing relevance test budget makes it a valuable tool for benchmarking RAG approaches in general (e.g., “RAG approach X beats LazyGraphRAG with budget Y for task Z”)."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/introducing-yasuyuki-matsushita-tackling-societal-challenges-with-ai-at-microsoft-research-asia-tokyo/",
+        "title": "Introducing Yasuyuki Matsushita: Tackling societal challenges with AI at Microsoft Research Asia – Tokyo",
+        "published_date": "November 18, 2024",
+        "authors": [],
+        "section_content": {
+            "Why return to Microsoft Research Asia?": "Question: We are excited to have you leading the new lab in Tokyo. You worked at Microsoft Research Asia in Beijing from 2003 to 2015 before transitioning to academia. What motivated you to return after nearly a decade?",
+            "What has changed over the decade?": "Question: Now that you’ve been back for a few weeks, from your perspective, what has changed at Microsoft Research Asia, and what has remained the same since you were last here?",
+            "Plans for the Microsoft Research Asia – Tokyo lab": "Question: With Microsoft Research Asia expanding regionally to places like Tokyo, Vancouver, Singapore, and Hong Kong, what are your plans as the head of the Tokyo lab, and how do you see it contributing to the region’s innovation ecosystem?",
+            "Cultivating the next generation": "Question: Talent is at the heart of Microsoft Research’s mission and culture. What kind of talent is Microsoft Research Asia – Tokyo looking for? In what ways can the Tokyo lab enhance its efforts to cultivate the next generation of tech innovators for the region?",
+            "Rapid evolution in computer vision": "Question: In today’s world, everything is moving toward digitization and intelligence. Ten years ago, your research focused on photometry and video analysis. Can you share some key outcomes from that period and explain how you see emerging technologies like AI influencing the field of computer vision?",
+            "Understanding embodied AI beyond robotics": "Question: Your current research interests include embodied AI, which is also one of the key areas at Microsoft Research Asia – Tokyo. What exactly is embodied AI, and how does it differ from robotics?",
+            "Advice for aspiring researchers in computer vision and AI": "Question: You’ve had an extensive career spanning academia and industry. From your experience as both an educator and a researcher, what advice would you give to young people interested in pursuing research in computer vision and AI?"
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/biomedparse-a-foundation-model-for-smarter-all-in-one-biomedical-image-analysis/",
+        "title": "BiomedParse: A foundation model for smarter, all-in-one biomedical image analysis",
+        "published_date": "November 18, 2024",
+        "authors": [
+            {
+                "name": "Hoifung Poon",
+                "url": "https://www.microsoft.com/en-us/research/people/hoifung/",
+                "title": "General Manager, Health Futures"
+            },
+            {
+                "name": "Theodore Zhao",
+                "url": "N/A",
+                "title": "Senior Applied Scientist"
+            },
+            {
+                "name": "Aiden Gu",
+                "url": "N/A",
+                "title": "Senior Applied Scientist"
+            },
+            {
+                "name": "Mu Wei",
+                "url": "N/A",
+                "title": "Principal Applied Science Manager"
+            },
+            {
+                "name": "Sheng Wang",
+                "url": "N/A",
+                "title": "Assistant Professor"
+            }
+        ],
+        "section_content": {
+            "Image parsing: a unifying framework for holistic image analysis": "Back in 2005, researchers first introduced the concept of “image parsing”—a unified approach to image analysis that jointly conducts object recognition, detection, and segmentation. Built on Bayesian networks, this early model offered a glimpse into a future of joint learning and reasoning in image analysis, though it was limited in scope and application. Fast forward to today, cutting-edge advances in generative AI have breathed new life into this vision. With our model, BiomedParse, we have created a foundation for biomedical image parsing that leverages interdependencies across the three subtasks, thus addressing key limitations in traditional methods. BiomedParse enables users to simply input a natural-language description of an object, which the model uses to predict both the object label and its segmentation mask, thus eliminating the need for a bounding box (Figure 1c). In other words, this joint learning approach lets users segment objects based on text alone.",
+            "Harnessing GPT-4 for large-scale data synthesis from existing datasets": "We created the first dataset for biomedical imaging parsing by harnessing GPT-4 for large-scale data synthesis from 45 existing biomedical segmentation datasets (Figure 1a and 1b). The key insight is to leverage readily available natural-language descriptions already in these datasets and use GPT-4 to organize this often messy, unstructured text with established biomedical object taxonomies.",
+            "State-of-the-art performance across 64 major object types in 9 modalities": "We evaluated BiomedParse on a large held-out test set with 102,855 image-mask-label sets across 64 major object types in nine modalities. BiomedParse outperformed prior best methods such as MedSAM and SAM, even when oracle per-object bounding boxes were provided. In the more realistic setting when MedSAM and SAM used a state-of-the-art object detector (Grounding DINO) to propose bounding boxes, BiomedParse outperformed them by a wide margin, between 75 and 85 absolute points in dice score (Figure 2a). BiomedParse also outperforms a variety of other prominent methods such as SegVol, Swin UNETR, nnU-Net, DeepLab V3+, and UniverSeg.",
+            "Recognizing and segmenting irregular and complex objects": "Biomedical objects often have complex and irregular shapes, which present significant challenges for segmentation, even with oracle bounding box. By joint learning with object recognition and detection, BiomedParse learns to model object-specific shapes, and its superiority is particularly pronounced for the most challenging cases (Figure 3). Encompassing a large collection of diverse object types in nine modalities, BiomedParseData also provides a much more realistic representation of object complexity in biomedicine.",
+            "Promising step toward scaling holistic biomedical image analysis": "By operating through a simple text prompt, BiomedParse requires substantially less user effort than prior best methods that typically require object-specific bounding boxes, especially when an image contains a large number of objects (Figure 2c). By modeling object recognition threshold, BiomedParse can detect invalid prompt and reject segmentation requests when an object is absent from the image. BiomedParse can be used to recognize and segment all known objects in an image in one fell swoop (Figure 4). By scaling holistic image analysis, BiomedParse can potentially be applied to key precision health applications such as early detection, prognosis, treatment decision support, and progression monitoring."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/graphrag-improving-global-search-via-dynamic-community-selection/",
+        "title": "GraphRAG: Improving global search via dynamic community selection",
+        "published_date": "November 15, 2024",
+        "authors": [
+            {
+                "name": "Bryan Li",
+                "url": "N/A",
+                "title": "Research Intern"
+            },
+            {
+                "name": "Ha Trinh",
+                "url": "https://www.microsoft.com/en-us/research/people/trinhha/",
+                "title": "Senior Data Scientist"
+            },
+            {
+                "name": "Darren Edge",
+                "url": "https://www.microsoft.com/en-us/research/people/daedge/",
+                "title": "Senior Director"
+            },
+            {
+                "name": "Jonathan Larson",
+                "url": "https://www.microsoft.com/en-us/research/people/jolarso/",
+                "title": "Partner Data Architect"
+            }
+        ],
+        "section_content": {
+            "Static vs. dynamic global search": "The global search\n(opens in new tab)\n algorithm in GraphRAG aims to answer abstract questions that require knowledge of the entire dataset. It generates answers by searching over communities at a predetermined level in the knowledge graph. Then the LLM combines and summarizes all the community reports at this level of abstraction. Finally, the summary is used as additional context for the LLM to generate the response to the user question. This map-reduce process allows the LLM to select relevant text from all the community reports to generate its final answer. This static approach is expensive and inefficient because it includes many lower-level reports that are not informative to the user query. Since it is unlikely that all community reports, especially at a high level, are relevant in answering the query, an approach that first considers the relevancy of the report prior to the resource-intensive map-reduce operation is highly desirable.",
+            "Dynamic community selection on the AP News dataset": "To demonstrate the cost saving that dynamic global search brings while maintaining a similar response quality, we evaluated the two methods side by side on a dataset from AP News. We tested static and dynamic search on 50 global questions and assessed the final response quality using an LLM evaluator. Moreover, we compared the total token cost of the two methods. To compare the two methods directly, we constrained the maximum search depth on dynamic global search so that both methods used the same underlying information.",
+            "Significant cost reduction while maintaining output quality": "The quality of responses generated from dynamic community selection are comparable to its static counterpart while reducing the total token cost. Our LLM evaluation shows that the output quality of the two methods is similar in the three key metrics across the 50 global questions on the AP News dataset, with no statistical significance between them. More importantly, we observed a significant reduction of total token costs when using the new method, with an average cost reduction of 77% over the existing static global search at community level 1. This is due to the large number of community reports being eliminated via the rating process, thus requiring fewer prompt and output tokens needed in the map-reduce operation. For instance, the existing static global search method processes about 1,500 level 1 community reports in the map-reduce operation, while only 470 community reports on average are selected in dynamic search to generate the final answer.",
+            "Comparable response quality and detail": "Table 2. Generated response from static search (level 1) and dynamic search (level 3) to the same global question on the AP News dataset.",
+            "Availability": "You can experiment with dynamic global search on the GraphRAG GitHub repository\n(opens in new tab)\n."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/orca-agentinstruct-agentic-flows-can-be-effective-synthetic-data-generators/",
+        "title": "Orca-AgentInstruct: Agentic flows can be effective synthetic-data generators",
+        "published_date": "November 14, 2024",
+        "authors": [
+            {
+                "name": "Arindam Mitra",
+                "url": "https://www.microsoft.com/en-us/research/people/armitra/",
+                "title": "Senior Researcher"
+            },
+            {
+                "name": "Ahmed Awadallah",
+                "url": "https://www.microsoft.com/en-us/research/people/hassanam/",
+                "title": "Partner Research Manager"
+            },
+            {
+                "name": "Yash Lara",
+                "url": "https://www.microsoft.com/en-us/research/people/yashlara/",
+                "title": "Senior PM"
+            }
+        ],
+        "section_content": {
+            "Contributors:": "Arindam Mitra, Luciano Del Corro, Guoqing Zheng, Shweti Mahajan, Dany Rouhana, Andres Codas, Yadong Lu, Wei-ge Chen, Olga Vrousgou, Corby Rosset, Fillipe Silva, Hamed Khanpour, Yash Lara, and Ahmed Awadallah"
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/toward-modular-models-collaborative-ai-development-enables-model-accountability-and-continuous-learning/",
+        "title": "Toward modular models: Collaborative AI development enables model accountability and continuous learning",
+        "published_date": "November 13, 2024",
+        "authors": [
+            {
+                "name": "Lucas Caccia",
+                "url": "https://www.microsoft.com/en-us/research/people/lpagecaccia/",
+                "title": "Senior Researcher"
+            },
+            {
+                "name": "Darya Moldavskaya",
+                "url": "https://www.microsoft.com/en-us/research/people/dmoldavskaya/",
+                "title": "Senior Technical Program Manager"
+            },
+            {
+                "name": "Alessandro Sordoni",
+                "url": "https://www.microsoft.com/en-us/research/people/alsordon/",
+                "title": "Principal Researcher"
+            }
+        ],
+        "section_content": {
+            "Assessing existing MoErging methods": "Most MoErging methods were developed within the past year, so they don’t reference each and are difficult to compare. To enable comparison of MoErging methods, we recently collaborated on a survey that establishes a taxonomy for comparing methods and organizes MoErging design choices into three steps:",
+            "Potential benefits and use cases of modular models": "Modular models can unlock new benefits and use cases for AI, offering a promising approach to addressing challenges in current AI development. Moving forward, further substantial research is needed to validate this potential and assess feasibility.",
+            "Current limitations and looking forward": "In this blog, we focused on a type of modular approach that involves training foundation models, which requires substantial compute power and large amounts of data. Despite the advantages of modularity, such as increased flexibility, efficiency, and adaptability, the development of foundation models remains resource-intensive, necessitating high-performance computing and robust datasets to support fine-tuning.",
+            "Acknowledgements": "We would like to thank paper collaborators: Prateek Yadav, Colin Raffel, Mohammed Muqeeth, Haokun Liu, Tianlong Chen, Mohit Bansal, Leshem Choshen, Edoardo Ponti, Zhan Su, Matheus Pereira, Nicolas Le Roux, Nabil Omi, Siddhartha Sen, Anurag Sarkar, Jordan T. Ash, Oleksiy Ostapenko, and Laurent Charlin."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/research-focus-week-of-november-11-2024/",
+        "title": "Research Focus: Week of November 11, 2024",
+        "published_date": "November 13, 2024",
+        "authors": [],
+        "section_content": {
+            "NEW RESEARCH": "The mostly basic Python programs (MBPP) dataset is commonly used for evaluating natural language models on the task of code generation. Despite its popularity, the original MBPP has two major problems: it relies on providing test cases to generate the right signature and there is poor alignment between “what is asked” and “what is evaluated” using the test cases.",
+            "Look Ma, no markers: holistic performance capture without the hassle": "Motion-capture technologies used in film and game production typically focus solely on face, body, or hand capture, requiring complex and expensive hardware and lots of manual intervention from skilled operators. While machine-learning-based approaches can overcome these challenges, they usually only support a single camera, often operate on a single part of the body, do not produce precise world-space results, and rarely generalize outside specific contexts.",
+            "Building AI Agents for Autonomous Clouds: Challenges and Design Principles": "Using AI agents for operational resilience of cloud services, which currently require significant human effort and domain knowledge, is a high-impact application. Interest is growing in AI for IT Operations (AIOps), which aims to automate complex operational tasks like fault localization and root cause analysis, thereby reducing human intervention and customer impact. However, achieving the vision of autonomous and self-healing clouds though AIOps is hampered by the lack of standardized frameworks for building, evaluating, and improving AIOps agents.",
+            "Towards Neural Synthesis for SMT-Assisted Proof-Oriented Programming": "AI-assisted programming offers great promise, but also raises concerns around the trustworthiness of AI-generated code. Proof-oriented languages like F*\n(opens in new tab)\n enable authoring programs backed by machine-checked proofs of correctness. Using AI to generate code and proofs in proof-oriented languages helps mitigate these concerns, while also making proof-oriented programming more accessible to people.",
+            "One-to-many testing for code generation from (just) natural language": "The mostly basic Python programs (MBPP) dataset is commonly used for evaluating natural language models on the task of code generation. Despite its popularity, the original MBPP has two major problems: it relies on providing test cases to generate the right signature and there is poor alignment between “what is asked” and “what is evaluated” using the test cases."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/preventing-side-channels-in-the-cloud/",
+        "title": "Preventing side-channels in the cloud",
+        "published_date": "November 12, 2024",
+        "authors": [
+            {
+                "name": "Stavros Volos",
+                "url": "https://www.microsoft.com/en-us/research/people/svolos/",
+                "title": "Principal Researcher"
+            },
+            {
+                "name": "Boris Köpf",
+                "url": "https://www.microsoft.com/en-us/research/people/bokoepf/",
+                "title": "Principal Researcher"
+            }
+        ],
+        "section_content": {
+            "A changing threat landscape": "Even with perfect architectural isolation, sharing microarchitectural resources, such as CPU caches and DRAM row buffers, can leak small amounts of information, because interference (due to sharing) leads to variations in the latency of memory accesses. This gives rise to so-called microarchitectural side-channel attacks where a malicious tenant can learn information about another tenant, in the worst case: their cryptographic keys.",
+            "Preventing microarchitectural side-channels with resource-exclusive domains": "In a research paper\n(opens in new tab)\n, which has received a distinguished paper award at the ACM Conference on Computer and Communications Security (ACM CCS’24\n(opens in new tab)\n), we present a system design that can prevent cross-VM microarchitectural side-channels in the cloud. Our design provides what we call resource-exclusive domains, which extend the architectural abstraction of private physical threads and private memory to the microarchitectural level. That is, resource-exclusive domains guarantee isolation even against powerful attackers that try to mount side-channel attacks on shared microarchitectural resources.",
+            "Co-designing cloud platforms for future microarchitectural isolation": "To validate the effectiveness and practicality of our approach, we inferred isolation schemes for a single CPU by reverse-engineering its microarchitecture. This approach is incomplete and does not scale to the diverse hardware fleet available in the cloud. We are working with CPU vendors to develop isolation schemes for future CPUs, which will then be exposed via the hardware interface for consumption by the hypervisor’s hardware abstraction layer. In this way, we will be able to reap the benefits of microarchitectural performance optimizations while continuing to provide strong security guarantees to cloud tenants."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/from-static-prediction-to-dynamic-characterization-ai2bmd-advances-protein-dynamics-with-ab-initio-accuracy/",
+        "title": "From static prediction to dynamic characterization: AI2BMD advances protein dynamics with ab initio accuracy",
+        "published_date": "November 6, 2024",
+        "authors": [
+            {
+                "name": "Tong Wang",
+                "url": "N/A",
+                "title": "Senior Researcher"
+            },
+            {
+                "name": "Yatao Li",
+                "url": "N/A",
+                "title": "Senior Researcher"
+            },
+            {
+                "name": "Ran Bi",
+                "url": "N/A",
+                "title": "Senior Research SDE"
+            },
+            {
+                "name": "Haiguang Liu",
+                "url": "N/A",
+                "title": "Principal Research Manager"
+            },
+            {
+                "name": "Tao Qin",
+                "url": "https://www.microsoft.com/en-us/research/people/taoqin/",
+                "title": "Partner Research Manager"
+            }
+        ],
+        "section_content": {
+            "Ab initio biomolecular dynamics simulation by AI": "Microsoft Research has been working on the development of efficient methods aiming for ab initio accuracy simulations of biomolecules. This method, AI2BMD (AI-based ab initio biomolecular dynamics system), has published in the journal Nature\n(opens in new tab)\n, representing the culmination of a four-year research endeavor.",
+            "Advancing biomolecular MD simulation": "AI2BMD represents a significant advancement in the field of MD simulations from the following aspects:",
+            "Looking ahead": "Achieving ab initio accuracy in biomolecular simulations is challenging but holds great potential for understanding the mystery of biological systems and designing new biomaterials and drugs. This breakthrough is a testament to the vision of AI for Science—an initiative to channel the capabilities of artificial intelligence to revolutionize scientific inquiry. The proposed framework aims to address limitations regarding accuracy, robustness, and generalization in the application of machine learning force fields. AI2BMD provides generalizability, adaptability, and versatility in simulating various protein systems by considering the fundamental structure of proteins, namely stretches of amino acids. This approach enhances energy and force calculations as well as the estimation of kinetic and thermodynamic properties."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/microsoft-at-sosp-2024-innovations-in-systems-research/",
+        "title": "Microsoft at SOSP 2024: Innovations in systems research",
+        "published_date": "November 4, 2024",
+        "authors": [],
+        "section_content": {
+            "Papers": "Jia Pan, Haoze Wu, Tanakorn Leesatapornwongsa, Suman Nath, Peng Huang",
+            "Paper and tutorial": "Distinguished Artifact Award\nChris Hawblitzel, Jay Lorch",
+            "Workshops": "Inigo Goiri, Pantea Zardoshti"
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/ai-powered-microgrids-facilitate-energy-resilience-and-equity-in-regional-communities/",
+        "title": "AI-powered microgrids facilitate energy resilience and equity in regional communities",
+        "published_date": "November 1, 2024",
+        "authors": [
+            {
+                "name": "Peeyush Kumar",
+                "url": "https://www.microsoft.com/en-us/research/people/pekumar/",
+                "title": "Senior Research Scientist"
+            }
+        ],
+        "section_content": {
+            "AI-powered microgrids support resilient communities": "Microgrids, small and localized energy systems, hold promise as a solution to the challenges of centralized energy systems. These microgrids can operate independently from the larger grid, providing participants with resilience and control. Figure 1 shows how these systems integrate renewable energy sources and storage to efficiently manage local energy needs.",
+            "Evaluating AI’s impact on microgrid efficiency and equity": "To explore AI’s potential in improving efficiency and equity in energy management, a team of Microsoft researchers collaborated with community organizations on simulations and a case study. They built a tabletop simulator to test whether AI could effectively determine when to generate, store, or sell electricity based on real-time data. The AI model was optimized for resilience and efficiency, using reinforcement learning to control grid and battery processes, enabling microgrids adapt to changing energy conditions and market dynamics.",
+            "Case study: AI-powered microgrid for community energy transition": "Microsoft researchers, in partnership with community-based organizations Remix: The Soul of Innovation\n(opens in new tab)\n, Maverick IQ\n(opens in new tab)\n and Ayika Solutions\n(opens in new tab)\n, are designing and implementing an AI-powered microgrid system in West Atlanta. Working closely with the Vicars Community Center (VCC) resilience hub\n(opens in new tab)\n, they aim to address challenges faced by the community due to rapid development. West Atlanta, like many Atlanta neighborhoods, faces rising housing prices and energy costs that disproportionately affect long-time residents. Communities relying on centralized grids are more vulnerable to outages, with slow recovery times, highlighting systemic inequalities in energy distribution.",
+            "Project phases": "Microsoft researchers, architects, and community partners held a participatory design session with state and utility representatives to define the project’s mission and key metrics. The CDC’s Social Vulnerability Index informed the site selection, supporting the project’s diversity, equity, and inclusion goals.",
+            "AI: A path to equity and resilience": "The transition to decentralized microgrids offers new opportunities for energy efficiency, with AI playing a critical role in managing these systems. Yet additional efforts are needed for communities to fully realize these benefits. Residents of aging homes are burdened with outdated wiring, inefficient appliances, and poor insulation—factors that drive up energy costs. Their dependence on centralized grids offers little relief, underscoring the need for community-focused energy solutions.",
+            "Acknowledgements": "I would like to thank all the collaborators on these projects: West Atlanta microgrid: Erica L. Holloman-Hill, John Jordan Jr, Markese Bryant. I also want to thank Karin Strauss for reviewing and providing feedback on this blog post; Andalib Samandari, the intern who supported this project; Vaishnavi Ranganathan for helping to brainstorm throughout the project; AI & Society Fellows program for supporting projects in this domain; and Microsoft’s Datacenter Community Affairs team, Jon McKenley and Kelly Lanier Arnold for supporting the project in West Atlanta."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/research-focus-week-of-october-28-2024/",
+        "title": "Research Focus: Week of October 28, 2024",
+        "published_date": "November 1, 2024",
+        "authors": [],
+        "section_content": {
+            "NEW RESEARCH": "Large vision-language models (VLMs) such as GPT-4V and GPT-4o show promise in driving intelligent agent systems that operate within user interfaces (UI). However, VLMs’ full potential remains underexplored in real-world applications, particularly when it comes to acting as general agents across diverse operating systems and applications with only vision input. One limiting factor is the absence of a robust technique for screen parsing which is capable of 1) reliably identifying interactable icons within the user interface, and 2) understanding the semantics of various elements in a screenshot and accurately associating the intended action with the corresponding region on the screen."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/introducing-drift-search-combining-global-and-local-search-methods-to-improve-quality-and-efficiency/",
+        "title": "Introducing DRIFT Search: Combining global and local search methods to improve quality and efficiency",
+        "published_date": "October 31, 2024",
+        "authors": [
+            {
+                "name": "Julian Whiting",
+                "url": "N/A",
+                "title": "Senior Machine Learning Engineer"
+            },
+            {
+                "name": "Zachary Hills",
+                "url": "N/A",
+                "title": "Senior Software Engineer"
+            },
+            {
+                "name": "Alonso Guevara Fernández",
+                "url": "https://www.microsoft.com/en-us/research/people/alonsog/",
+                "title": "Senior Software Engineer"
+            },
+            {
+                "name": "Ha Trinh",
+                "url": "https://www.microsoft.com/en-us/research/people/trinhha/",
+                "title": "Senior Data Scientist"
+            },
+            {
+                "name": "Adam Bradley",
+                "url": "N/A",
+                "title": "Managing Partner, Strategic Research"
+            },
+            {
+                "name": "Jonathan Larson",
+                "url": "https://www.microsoft.com/en-us/research/people/jolarso/",
+                "title": "Partner Data Architect"
+            }
+        ],
+        "section_content": {
+            "How GraphRAG works": "GraphRAG has two primary components, an indexing engine and a query engine.",
+            "Introducing DRIFT Search": "DRIFT Search introduces a new approach to local search queries by including community information in the search process. This greatly expands the breadth of the query’s starting point and leads to retrieval and usage of a far higher variety of facts in the final answer. This addition expands the GraphRAG query engine by providing a more comprehensive option for local search, which uses community insights to refine a query into detailed follow-up questions. These follow-ups allow DRIFT to handle queries that may not fully align with the original extraction templates defined by the user at index time.",
+            "DRIFT Search: A step-by-step process": "DRIFT search excels by dynamically combining global insights with local refinement, enabling navigation from high-level summaries down to original text chunks within the knowledge graph. This layered approach ensures that detailed, context-rich information is preserved even when the initial query diverges from the persona used during indexing. By decomposing broad questions into fine-grained follow-ups, DRIFT captures granular details and adjusts based on the emerging context, making it adaptable to diverse query types. This makes it particularly effective when handling queries that require both breadth and depth without losing specific details.",
+            "Availability": "DRIFT search is available now on the GraphRAG GitHub\n(opens in new tab)\n.",
+            "Future research directions": "A future version of DRIFT will incorporate an improved version of Global Search that will allow it to more directly address questions currently serviced best by global search. The hope is to then move towards a single query interface that can service questions of both local and global varieties. This work will further evolve DRIFT’s termination logic, potentially through a reward model that balances novel information with redundancy. Additionally, executing follow-up queries using either global or local search modes could improve efficiency. Some queries require broader data access, which can be achieved by leveraging a query router and a lite-global search variant that uses fewer community reports, tokens, and overall resources."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/research-focus-week-of-october-7-2024/",
+        "title": "Research Focus: Week of October 7, 2024",
+        "published_date": "October 9, 2024",
+        "authors": [],
+        "section_content": {
+            "NEW RESEARCH": "Container-based technologies empower cloud tenants to develop highly portable software and deploy services in the cloud at a rapid pace. Cloud privacy, meanwhile, is important as a large number of container deployments operate on privacy-sensitive data, but challenging due to the increasing frequency and sophistication of attacks. State-of-the-art confidential container-based designs leverage process-based trusted execution environments (TEEs), but face security and compatibility issues that limit their practical deployment.",
+            "Securely Training Decision Trees Efficiently": "In a recent paper: Securely Training Decision Trees Efficiently that will appear at ACM CCS 2024, researchers from Microsoft significantly reduce the communication complexity of secure decision tree training. Decision trees are an important class of supervised learning algorithms. In this approach, a classification or regression tree is built based on a set of features or attributes present in the training dataset. As with many learning algorithms, the accuracy of decision trees can be greatly improved with larger volumes of data. However, this can be a challenge, since data may come from multiple independent sources and require attention to data privacy concerns. In this case, the use of a privacy-enhancing technology, such as secure multi-party computation (MPC), can help protect the underlying training data.",
+            "Multi-label audio classification with a noisy zero-shot teacher": "Improving the real-world accuracy of audio content detection (ACD) is an important problem for streaming platforms, operating systems and playback devices. It’s similar to audio tagging, i.e., labeling sounds present in a given audio segment of several seconds length or longer. However, ACD may consist of a small number of higher-level labels or super-classes, e.g. speech, music, traffic, machines, animals, etc., where each label can include a multitude of specific sounds.",
+            "Tabularis Revilio: Converting Text to Tables": "Tables are commonly used to store and present data. These tables are often moved as free-form text when copied from documents and applications without proper tabular support like PDF documents, web pages, or images. Users are dependent on manual effort or programming abilities to parse this free-form text back into structured tables.",
+            "Confidential Container Groups: Implementing Confidential Computing on Azure Container Instances": "Container-based technologies empower cloud tenants to develop highly portable software and deploy services in the cloud at a rapid pace. Cloud privacy, meanwhile, is important as a large number of container deployments operate on privacy-sensitive data, but challenging due to the increasing frequency and sophistication of attacks. State-of-the-art confidential container-based designs leverage process-based trusted execution environments (TEEs), but face security and compatibility issues that limit their practical deployment.",
+            "NEW VIDEO SERIES": "Generative AI is changing how businesses operate and how stakeholders talk to each other. The building blocks for large scale AI transformation are now in place, but we are only beginning to imagine how it will unfold. Learn what Microsoft research leaders discovered from some early AI innovation in healthcare, and how businesses can prepare for what’s ahead.",
+            "AI for Business Transformation with Peter Lee and Vijay Mital": "Generative AI is changing how businesses operate and how stakeholders talk to each other. The building blocks for large scale AI transformation are now in place, but we are only beginning to imagine how it will unfold. Learn what Microsoft research leaders discovered from some early AI innovation in healthcare, and how businesses can prepare for what’s ahead."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/data-formulator-exploring-how-ai-can-help-analysts-create-rich-data-visualizations/",
+        "title": "Data Formulator: Exploring how AI can help analysts create rich data visualizations",
+        "published_date": "October 1, 2024",
+        "authors": [
+            {
+                "name": "Chenglong Wang",
+                "url": "https://www.microsoft.com/en-us/research/people/chenwang/",
+                "title": "Senior Researcher"
+            },
+            {
+                "name": "Steven Drucker",
+                "url": "https://www.microsoft.com/en-us/research/people/sdrucker/",
+                "title": "Partner Research Manager"
+            },
+            {
+                "name": "Dan Marshall",
+                "url": "https://www.microsoft.com/en-us/research/people/danmar/",
+                "title": "Principal Research Software Development Engineer"
+            },
+            {
+                "name": "Jeevana Priya Inala",
+                "url": "https://www.microsoft.com/en-us/research/people/jinala/",
+                "title": "Senior Researcher"
+            },
+            {
+                "name": "Kori Inkpen",
+                "url": "https://www.microsoft.com/en-us/research/people/kori/",
+                "title": "Senior Principal Research Manager"
+            },
+            {
+                "name": "Jianfeng Gao",
+                "url": "https://www.microsoft.com/en-us/research/people/jfgao/",
+                "title": "Distinguished Scientist & Vice President"
+            }
+        ],
+        "section_content": {
+            "Creating and refining charts with the Concept Encoding Shelf and data threads": "With Data Formulator, data analysts can now create charts from scratch or select from existing designs through data threads. The UI features a pane called the “Concept Encoding Shelf,” where users can build their chart by dragging various data fields into it and defining them or by creating new ones. A large language model (LLM) on the backend processes this input, generating the necessary code to produce the visual and updating the data threads for future use. This process is illustrated in Figure 2.",
+            "Data Formulator’s framework": "Data Formulator’s architecture separates data transformation from chart configuration, improving both the user experience and AI performance. Upon receiving user specifications, the system follows a three-step process: (1) it generates a Vega-Lite script, which defines how data is visualized; (2) it instructs the AI to handle data transformation; and (3) it creates the chart using the converted data, as illustrated in Figure 4.",
+            "Implications and looking forward": "Refining how users interact with AI-powered tools is essential for improving how they communicate their requirements, paving the way for more efficient and effective collaboration. By integrating UI elements and natural language input, we designed Data Formulator to let users to define their visualization needs with precision, leading to better results and reducing the need for multiple clarifications.",
+            "Acknowledgements": "We’d like to thank Bongshin Lee, John Thompson, and Gonzalo Ramos for their feedback and contributions to this project."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/stress-testing-biomedical-vision-models-with-radedit-a-synthetic-data-approach-for-robust-model-deployment/",
+        "title": "Stress-testing biomedical vision models with RadEdit: A synthetic data approach for robust model deployment",
+        "published_date": "September 30, 2024",
+        "authors": [
+            {
+                "name": "Max Ilse",
+                "url": "https://www.microsoft.com/en-us/research/people/maxilse/",
+                "title": "Senior Researcher"
+            },
+            {
+                "name": "Daniel Coelho de Castro",
+                "url": "https://www.microsoft.com/en-us/research/people/dacoelh/",
+                "title": "Senior Researcher"
+            },
+            {
+                "name": "Javier Alvarez-Valle",
+                "url": "https://www.microsoft.com/en-us/research/people/jaalvare/",
+                "title": "Senior Director of Biomedical Imaging"
+            }
+        ],
+        "section_content": {
+            "How RadEdit works": "RadEdit improves biomedical image editing using three key inputs, as illustrated in Figure 1:",
+            "Simulating dataset shifts": "A key feature of RadEdit is its ability to simulate dataset shifts with precise spatial control for comprehensive model performance evaluation. This includes differences in image acquisition, the appearance of underlying pathologies, and population characteristics.",
+            "Stress-testing multimodal models": "We have used RadEdit to stress-test image classification and segmentation models, and we see potential for future applications in complex multimodal tasks like generating radiology reports. RadEdit can help identify limitations in multimodal large language models (MLLMs) like Microsoft’s MAIRA-1 and MAIRA-2, especially when dealing with rare conditions or unusual combinations of findings not well-represented in the training data. These MLLMs take one or more radiological images and relevant clinical information as input to produce detailed text reports.",
+            "Implications and looking forward": "RadEdit offers significant advantages for the biomedical research community. It helps identify biases and blind spots before deployment, helping to ensure that biomedical vision models perform reliably in clinical settings. By simulating dataset shifts, RadEdit reduces the need to collect additional evaluation data, saving time and resources.",
+            "Acknowledgments": "We would like to thank our paper coauthors: Fernando Pérez-García, Sam Bond-Taylor, Pedro P. Sanchez, Boris van Breugel, Harshita Sharma, Valentina Salvatelli, Maria T. A. Wetscherek, Hannah Richardson, Matthew P. Lungren, Aditya Nori, and Ozan Oktay, as well as all our collaborators across Microsoft Cloud for Healthcare and Microsoft Health Futures."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/microsoft-research-forum-episode-4-the-future-of-multimodal-models-a-new-small-language-model-and-other-ai-updates/",
+        "title": "Microsoft Research Forum Episode 4: The future of multimodal models, a new “small” language model, and other AI updates",
+        "published_date": "September 26, 2024",
+        "authors": [],
+        "section_content": {
+            "Keynote": "Jianfeng Gao introduced Phi-3-Vision, an advanced and economical open-source multimodal model. As a member of the Phi-3 model family, Phi-3-Vision enhances language models by integrating multisensory skills, seamlessly combining language and vision capabilities.",
+            "Panel Discussion": "This discussion examined the transformative potential and core challenges of multimodal models across various domains, including precision health, game intelligence, and foundation models. Microsoft researchers John Langford, Hoifung Poon, Katja Hofmann, and Jianwei Yang shared their thoughts on future directions, bridging gaps, and fostering synergies within the field.",
+            "Lightning Talks": "This talk presented a new kind of computer—an analog optical computer—that has the potential to accelerate AI inference and hard optimization workloads by 100x, leveraging hardware-software co-design to improve the efficiency and sustainability of real-world applications."
+        }
+    },
+    {
+        "url": "https://www.microsoft.com/en-us/research/blog/research-focus-week-of-september-23-2024/",
+        "title": "Research Focus: Week of September 23, 2024",
+        "published_date": "September 25, 2024",
+        "authors": [],
+        "section_content": {
+            "NEW RESEARCH": "LLMs are used for a wide variety of tasks and scenarios, such as chat, question answering, code generation, summarization and reasoning. These tasks exhibit variations in their input and output characteristics. Requests for different tasks with distinct input and output characteristics are often served concurrently at a single model instance, which can lead to spikes in end-to-end latency, time to generate the first token, and time between tokens (in the case of a streaming request). Understanding the interplay between requests of different characteristics is important for optimizing the end-to-end performance during LLM inference.",
+            "INTERNSHIP OPPORTUNITY": "The Microsoft Research Undergrad Internship Program offers 12-week internships in Redmond, Washington; New York City; or Cambridge, Massachusetts, for rising college juniors and seniors who are passionate about technology and champion diversity and inclusion."
+        }
+    }
+]

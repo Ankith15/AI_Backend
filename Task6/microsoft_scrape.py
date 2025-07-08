@@ -2,32 +2,32 @@ import asyncio
 import json
 from playwright.async_api import async_playwright
 
-BASE_URL = "https://www.microsoft.com/en-us/research/blog/page/{}/"
+BASE_URL = "https://www.microsoft.com/en-us/research/blog/page/{}"
 
-async def scrape_blog_details():
+async def scrape_microsoft_blogs():
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=False)  # use headless=True if needed
+        browser = await p.chromium.launch(headless=False)  # Set to True for headless scraping
         context = await browser.new_context()
         page = await context.new_page()
 
-        all_data = []
+        all_blogs = []
         seen_urls = set()
-        max_pages = 142  # You can increase or decrease this based on actual total
+        max_pages = 5  # Change to 142 or more to scrape full site
 
-        for page_number in range(1, max_pages + 1):
-            url = BASE_URL.format(page_number)
-            print(f"\n🌍 Scraping Page {page_number}: {url}")
+        for page_num in range(1, max_pages + 1):
+            page_url = BASE_URL.format(page_num)
+            print(f"\n🌍 Scraping listing page {page_num}: {page_url}")
             try:
-                await page.goto(url)
-                await page.wait_for_selector("a.post-card-inline__title-link[href^='/news/']", timeout=10000)
-            except:
-                print(f"❌ Skipping page {page_number}, failed to load.")
+                await page.goto(page_url, timeout=60000)
+                await page.wait_for_selector("article h3 > a[href*='/en-us/research/blog/']", timeout=15000)
+            except Exception as e:
+                print(f"❌ Failed to load listing page {page_num}: {e}")
                 continue
 
-            blog_links = await page.query_selector_all("a.post-card-inline__title-link[href^='/news/']")
-            print(f"📄 Found {len(blog_links)} blog links on this page")
+            links = await page.query_selector_all("article h3 > a[href*='/en-us/research/blog/']")
+            print(f"🔗 Found {len(links)} blog post links")
 
-            for link in blog_links:
+            for link in links:
                 href = await link.get_attribute("href")
                 if not href:
                     continue
@@ -39,37 +39,79 @@ async def scrape_blog_details():
 
                 blog_page = await context.new_page()
                 try:
-                    await blog_page.goto(full_url)
+                    await blog_page.goto(full_url, timeout=30000)
                     await blog_page.wait_for_load_state("domcontentloaded")
 
-                    title_elem = await blog_page.query_selector('h1[itemprop="headline"]')
-                    date_elem = await blog_page.query_selector('p.single-post__header-date time')
-                    content_elem = await blog_page.query_selector('#main > div > div.row > div.col.col-12.col-lg-8.offset-lg-2')
+                    title_el = await blog_page.query_selector("h1")
+                    date_el = await blog_page.query_selector("time")
 
-                    title = (await title_elem.inner_text()).strip() if title_elem else "N/A"
-                    date = (await date_elem.inner_text()).strip() if date_elem else "N/A"
-                    content = (await content_elem.inner_text()).strip() if content_elem else "N/A"
+                    title = (await title_el.inner_text()).strip() if title_el else "N/A"
+                    date = (await date_el.inner_text()).strip() if date_el else "N/A"
 
-                    all_data.append({
+                    author_section = await blog_page.query_selector("p.single-post__header-authors")
+                    authors = []
+                    if author_section:
+                        author_nodes = await author_section.query_selector_all("span.msr-authors-list--author")
+                        for node in author_nodes:
+                            name_el = await node.query_selector("span[itemprop='author']")
+                            name = (await name_el.inner_text()).strip() if name_el else "N/A"
+
+                            url_el = await node.query_selector("a.msr-authors-list--url")
+                            url = await url_el.get_attribute("href") if url_el else "N/A"
+
+                            title_el = await node.query_selector("span.msr-authors-list--title")
+                            title_text = (await title_el.inner_text()).strip() if title_el else "N/A"
+
+                            authors.append({
+                                "name": name,
+                                "url": url,
+                                "title": title_text
+                            })
+
+                    headings = await blog_page.query_selector_all("h2.wp-block-heading")
+                    content_map = {}
+
+                    for heading in headings:
+                        heading_text = (await heading.inner_text()).strip()
+
+                        next_para = await heading.evaluate_handle(
+                            """(el) => {
+                                let next = el.nextElementSibling;
+                                while (next && next.tagName !== 'P') {
+                                    next = next.nextElementSibling;
+                                }
+                                return next;
+                            }"""
+                        )
+                        element = next_para.as_element()
+                        if element:
+                            content = await element.inner_text()
+                            content_map[heading_text] = content.strip()
+                        else:
+                            content_map[heading_text] = ""
+
+                    blog_data = {
                         "url": full_url,
                         "title": title,
                         "published_date": date,
-                        "content": content
-                    })
+                        "authors": authors,
+                        "section_content": content_map
+                    }
 
+                    all_blogs.append(blog_data)
                     print(f"✅ Scraped: {title}")
+
                 except Exception as e:
-                    print(f"❌ Error extracting {full_url}: {e}")
+                    print(f"❌ Failed to scrape blog {full_url}: {e}")
                 finally:
                     await blog_page.close()
 
         await browser.close()
 
-        # Save all data to JSON
         with open("microsoft_research_blogs.json", "w", encoding="utf-8") as f:
-            json.dump(all_data, f, indent=4, ensure_ascii=False)
+            json.dump(all_blogs, f, indent=4, ensure_ascii=False)
 
-        print(f"\n✅ Done. Total blogs scraped: {len(all_data)}")
+        print(f"\n✅ Done. Total blogs scraped: {len(all_blogs)}")
 
 if __name__ == "__main__":
-    asyncio.run(scrape_blog_details())
+    asyncio.run(scrape_microsoft_blogs())
