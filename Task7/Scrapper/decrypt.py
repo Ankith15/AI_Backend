@@ -10,7 +10,7 @@ def scrape_decrypt_rss_full_content():
     articles = []
 
     print("🌐 Visiting Decrypt RSS feed...")
-    for entry in feed.entries[:5]:  # top 5 articles
+    for entry in feed.entries[:5]: 
         title = entry.title
         url = entry.link
         published = entry.published if hasattr(entry, 'published') else datetime.utcnow().isoformat()

@@ -17,7 +17,7 @@ def deduplicate_and_select_top_articles(articles):
     for article in articles:
         title = article.get("title", "").strip()
         content = article.get("content", "").strip()
-        key = (title.lower(), content[:100].lower())  # hybrid deduplication key
+        key = (title.lower(), content[:100].lower())  
 
         if title and content and key not in seen:
             seen.add(key)
