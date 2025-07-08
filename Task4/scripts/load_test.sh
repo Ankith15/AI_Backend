@@ -1,4 +1,3 @@
-#!/bin/bash
 
 URL=$1
 
