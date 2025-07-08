@@ -14,7 +14,7 @@ from app.utils.jwt import create_access_token
 router = APIRouter(tags=["Auth"])
 templates = Jinja2Templates(directory="app/templates")
 
-# ✅ API-based register (still useful for testing in Swagger or Postman)
+# API-based register (still useful for testing in Swagger or Postman)
 @router.post("/register", response_model=UserOut)
 def register(user: UserCreate, db: Session = Depends(get_db)):
     existing_user = db.query(User).filter(User.email == user.email).first()
@@ -32,12 +32,12 @@ def register(user: UserCreate, db: Session = Depends(get_db)):
     db.refresh(new_user)
     return new_user
 
-# ✅ HTML form: render register page
+#  HTML form: render register page
 @router.get("/register-form", response_class=HTMLResponse)
 def register_form(request: Request):
     return templates.TemplateResponse("register.html", {"request": request})
 
-# ✅ HTML form: handle user registration
+#  HTML form: handle user registration
 @router.post("/register-form", response_class=HTMLResponse)
 def register_user_form(
     request: Request,
@@ -64,7 +64,7 @@ def register_user_form(
     db.refresh(new_user)
     return RedirectResponse(url="/", status_code=302)
 
-# ✅ Combined login route (form + JWT + redirect to dashboard)
+#  Combined login route (form + JWT + redirect to dashboard)
 @router.post("/login", response_class=HTMLResponse)
 def login(
     request: Request,

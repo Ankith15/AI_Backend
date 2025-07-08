@@ -16,7 +16,7 @@ templates = Jinja2Templates(directory="app/templates")
 def create_org_form(request: Request):
     return templates.TemplateResponse("create_org.html", {"request": request})
 
-# ✅ POST: Create Org with duplicate check + real user
+# POST: Create Org with duplicate check + real user
 @router.post("/org/create-form")
 def create_org(request: Request, name: str = Form(...), db: Session = Depends(get_db)):
     token = request.cookies.get("access_token")

@@ -51,7 +51,6 @@ def view_resources(request: Request, db: Session = Depends(get_db)):
     except JWTError:
         return RedirectResponse("/", status_code=302)
 
-# ✅ Guest view (no login required)
 @router.get("/guest/resource/{resource_id}")
 def guest_view_resource(resource_id: int, request: Request, db: Session = Depends(get_db)):
     resource = db.query(Resource).filter(Resource.id == resource_id).first()
