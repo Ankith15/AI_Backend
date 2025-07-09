@@ -221,3 +221,6 @@ coindesk_latest_news.json
 top10_articles.json
 top10_summaries.json
 summarized_articles.json
+cmd_code.txt
+vector_store
+heart.csv
