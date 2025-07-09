@@ -119,6 +119,12 @@ Visit: [http://localhost:5000](http://localhost:5000)
 * View experiments
 * Compare runs
 * Download model artifacts
+---
+
+
+https://github.com/user-attachments/assets/5ba313a7-5abf-49e3-ac67-c6ced4e5c5ee
+
+
 
 ---
 
