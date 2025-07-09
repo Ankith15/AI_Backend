@@ -142,6 +142,12 @@ minikube image load fastapi-cpu:latest --daemon
 kubectl delete deployment fastapi-cpu
 kubectl apply -f ks8/deployment.yaml
 ```
+## Video
+
+
+
+https://github.com/user-attachments/assets/68133c67-c635-4dfd-bff5-b82a5e69649d
+
 
 ---
 
