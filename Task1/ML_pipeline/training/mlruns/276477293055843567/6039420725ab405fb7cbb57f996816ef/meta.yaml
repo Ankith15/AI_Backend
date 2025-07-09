@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Dell/ai_projects/ml_api/mlruns/276477293055843567/6039420725ab405fb7cbb57f996816ef/artifacts
+end_time: 1751712313351
+entry_point_name: ''
+experiment_id: '276477293055843567'
+lifecycle_stage: active
+run_id: 6039420725ab405fb7cbb57f996816ef
+run_name: nimble-gull-678
+run_uuid: 6039420725ab405fb7cbb57f996816ef
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1751712299300
+status: 3
+tags: []
+user_id: Dell
