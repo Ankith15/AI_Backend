@@ -140,6 +140,11 @@ CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
 docker build -t rag-pipeline .
 docker run -p 8000:8000 rag-pipeline
 ```
+**Video
+
+https://github.com/user-attachments/assets/f6ce5592-e623-4e04-9f4c-aaf348f2cabb
+
+
 
 ---
 
