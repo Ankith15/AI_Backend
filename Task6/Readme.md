@@ -123,14 +123,9 @@ python microsoft_scrape.py
 ```
 ## Video's
 
+https://github.com/user-attachments/assets/066f06c8-92b9-4858-9aac-893e82c98dbc
 
-Uploading Task6_Microsoft_scrapper.mp4…
-
-
-
-Uploading Task6_scheme_scrapper.mp4…
-
-
+https://github.com/user-attachments/assets/16549676-f7ec-4d9e-9c1b-3881ecbc46d7
 
 ---
 
