@@ -1,4 +1,3 @@
-````markdown
 # Prodigal AI - Advanced Backend Engineering Hiring Tasks
 
 Welcome to the GitHub repository for the Prodigal AI Advanced Backend Engineering Hiring challenge! This repository serves as a comprehensive demonstration of my capabilities in designing, implementing, and orchestrating complex backend systems across various domains, including AI, data, infrastructure, and automation.
@@ -34,6 +33,7 @@ To set up and run the projects within this repository, follow these general step
 * **Docker & Docker Compose:** Ensure Docker Desktop (or Docker Engine and Docker Compose) is installed and running on your system. This is crucial for running the containerized services.
 
 * **Git:** For cloning the repository.
+````markdown
 
 ### General Setup
 
