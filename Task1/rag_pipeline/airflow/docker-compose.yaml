@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  airflow-webserver:
+    image: apache/airflow:2.8.1
+    restart: always
+    command: webserver
+    env_file:
+      - .env
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@airflow-postgres:5432/airflow
+      AIRFLOW__CORE__DAGS_FOLDER: /opt/airflow/dags
+      AIRFLOW__WEBSERVER__RBAC: 'True'
+      AIRFLOW__CORE__FERNET_KEY: ${AIRFLOW__CORE__FERNET_KEY}
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ../app:/opt/airflow/app
+      - ../vector_store:/opt/airflow/vector_store
+    ports:
+      - "8080:8080"
+    depends_on:
+      - airflow-postgres
+
+  airflow-scheduler:
+    image: apache/airflow:2.8.1
+    restart: always
+    command: scheduler
+    env_file:
+      - .env
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@airflow-postgres:5432/airflow
+      AIRFLOW__CORE__DAGS_FOLDER: /opt/airflow/dags
+      AIRFLOW__CORE__FERNET_KEY: ${AIRFLOW__CORE__FERNET_KEY}
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ../app:/opt/airflow/app
+      - ../vector_store:/opt/airflow/vector_store
+    depends_on:
+      - airflow-postgres
+
+  airflow-postgres:
+    image: postgres:13
+    restart: always
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    volumes:
+      - postgres-db-volume:/var/lib/postgresql/data
+
+volumes:
+  postgres-db-volume:
