@@ -1,7 +1,7 @@
 
-```markdown
-# 🚀 Kubernetes Pod Autoscaling with FastAPI 
 
+# 🚀 Kubernetes Pod Autoscaling with FastAPI 
+```markdown
 This project demonstrates **Horizontal Pod Autoscaling (HPA)** in Kubernetes using a simple **FastAPI** app. The app is containerized with Docker, deployed to a Minikube cluster, and auto-scales based on CPU usage.
 
 ---
