@@ -133,6 +133,9 @@ Task3/
 ├── logs/
 │   └── events.log
 ```
+## Video
+
+https://github.com/user-attachments/assets/61dea631-9b93-48f7-b2a1-488476f808d7
 
 ---
 
