@@ -1,6 +1,7 @@
 
-```markdown
 # 🔍 Web Scrapers for Public Data Extraction
+
+```markdown
 
 This repository contains two robust Python-based web scrapers built with **Playwright** for real-time structured data extraction:
 
@@ -8,10 +9,10 @@ This repository contains two robust Python-based web scrapers built with **Playw
 2. 🧠 **Microsoft Research Scraper** – Extracts detailed blog content from [Microsoft Research Blog](https://www.microsoft.com/en-us/research/blog), including titles, dates, authors, and section-wise insights.
 
 ---
+```
 
 ## 📁 Project Structure
 
-```
 
 project/
 │
@@ -120,6 +121,16 @@ python microsoft_scrape.py
   }
 }
 ```
+## Video's
+
+
+Uploading Task6_Microsoft_scrapper.mp4…
+
+
+
+Uploading Task6_scheme_scrapper.mp4…
+
+
 
 ---
 
