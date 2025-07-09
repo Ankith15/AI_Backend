@@ -1,8 +1,8 @@
 
-## 📰 Web3 Newsletter Automation with LLMs & Telegram Bot
+# 📰 Web3 Newsletter Automation with LLMs & Telegram Bot
 
 This project automates the end-to-end pipeline for generating a **daily Web3 newsletter**, summarizing articles using **Groq’s Mixtral/LLama3 model**, generating a **PDF**, and posting it to **Telegram**.
-
+Telegram Link: https://t.me/+AdPjFyXvxqIxMGJl
 ---
 
 ### 📌 Features
@@ -137,10 +137,4 @@ python-telegram-bot==20.7
 * Add newsletter email delivery
 * Add sentiment analysis per article
 * Expand to include real-time token stats or charts
-
----
-
-### 👨‍💻 Author
-
-**Ankith** – [LinkedIn](https://www.linkedin.com/in/ankith-bhandary-642918240/) • [GitHub](https://github.com/Ankith15/)
 
